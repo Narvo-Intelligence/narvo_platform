@@ -39,7 +39,7 @@
   padding: 1px 6px;
   background: var(--emerald-tint);
   border-radius: 0;
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  border: var(--hairline) solid rgba(16, 185, 129, 0.25);
 }
 
 /* --- Two-column layout --- */
@@ -63,7 +63,7 @@
   font-size: 10px;
   margin-bottom: 14px;
   padding-bottom: 10px;
-  border-bottom: 1px solid var(--slate);
+  border-bottom: var(--hairline) solid var(--slate);
 }
 .docs__toc ol {
   list-style: none;
@@ -93,7 +93,7 @@
   letter-spacing: 0.1em;
   font-size: 10px;
   text-transform: uppercase;
-  border-top: 1px solid var(--slate);
+  border-top: var(--hairline) solid var(--slate);
 }
 
 /* --- Content sections --- */
@@ -108,7 +108,7 @@
 .docs__engine {
   scroll-margin-top: calc(var(--nav-h) + 32px);
   padding: 28px;
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--slate);
   border-radius: var(--r-lg);
   background: var(--graphite);
 }
@@ -149,7 +149,7 @@
   padding: 1px 6px;
   background: var(--emerald-tint);
   border-radius: 0;
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  border: var(--hairline) solid rgba(16, 185, 129, 0.25);
 }
 
 /* --- Quick-start step cards --- */
@@ -160,7 +160,7 @@
 }
 .docs__step {
   padding: 20px;
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--slate);
   border-radius: var(--r-md);
   background: rgba(0, 0, 0, 0.3);
 }
@@ -190,7 +190,7 @@
 .docs__step-code {
   margin: 0;
   padding: 12px 14px;
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--slate);
   border-radius: var(--r-sm);
   background: var(--void);
   font-family: var(--font-mono);
@@ -222,12 +222,12 @@
 }
 .docs__engine-head .engine__status--live {
   background: var(--emerald-tint);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  border: var(--hairline) solid rgba(16, 185, 129, 0.3);
   color: var(--emerald);
 }
 .docs__engine-head .engine__status--future {
   background: rgba(245, 158, 11, 0.08);
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  border: var(--hairline) solid rgba(245, 158, 11, 0.3);
   color: var(--amber);
 }
 .docs__engine--future {
@@ -247,8 +247,8 @@
   gap: 16px 24px;
   margin: 0 0 24px;
   padding: 20px 0;
-  border-top: 1px solid var(--slate);
-  border-bottom: 1px solid var(--slate);
+  border-top: var(--hairline) solid var(--slate);
+  border-bottom: var(--hairline) solid var(--slate);
 }
 .docs__engine-meta > div { min-width: 0; }
 .docs__engine-meta dt {
@@ -272,7 +272,7 @@
   font-size: 0.92em;
   color: var(--syntax-cyan);
   background: var(--void);
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--slate);
 }
 
 /* --- SDKs --- */
@@ -286,7 +286,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 14px 18px;
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--slate);
   border-radius: var(--r-md);
   background: rgba(0, 0, 0, 0.3);
   font-size: 14px;
@@ -308,7 +308,7 @@
   gap: 16px;
   align-items: center;
   padding: 12px 16px;
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--slate);
   border-radius: var(--r-md);
   background: rgba(0, 0, 0, 0.3);
   font-size: 13.5px;
@@ -328,7 +328,7 @@
 /* --- Mintlify CTA --- */
 .docs__mintlify {
   padding: 40px;
-  border: 1px dashed var(--slate);
+  border: var(--hairline) dashed var(--slate);
   border-radius: var(--r-lg);
   background: rgba(17, 17, 17, 0.6);
   text-align: center;
@@ -352,7 +352,7 @@
   .docs__toc {
     position: static;
     padding: 16px;
-    border: 1px solid var(--slate);
+    border: var(--hairline) solid var(--slate);
     border-radius: var(--r-md);
     background: var(--graphite);
   }

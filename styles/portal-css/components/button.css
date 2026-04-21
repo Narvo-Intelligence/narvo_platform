@@ -2,21 +2,25 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--space-1);
   height: 40px;
-  padding: 0 18px;
+  padding: 0 var(--space-2);
   border-radius: var(--r-md);
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.005em;
-  border: 1px solid transparent;
+  border: var(--hairline) solid transparent;
   transition:
     background var(--dur) var(--ease),
     border-color var(--dur) var(--ease),
     color var(--dur) var(--ease);
   white-space: nowrap;
 }
-.btn--lg { height: 52px; padding: 0 24px; font-size: 15px; }
+.btn--lg {
+  height: 52px;
+  padding: 0 var(--space-3);
+  font-size: 15px;
+}
 .btn--block { display: flex; width: 100%; }
 
 .btn--primary {
@@ -38,5 +42,5 @@
 }
 .btn--ghost:hover {
   background: var(--obsidian-lift);
-  border-color: #3a3a3a;
+  border-color: var(--border-structural);
 }

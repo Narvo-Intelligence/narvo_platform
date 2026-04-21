@@ -9,7 +9,7 @@
 .matrix__head {
   text-align: center;
   max-width: 640px;
-  margin: 0 auto 56px;
+  margin: 0 auto var(--space-7);
 }
 .matrix__eyebrow {
   font-family: var(--font-mono);
@@ -30,21 +30,20 @@
 .matrix__grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  gap: var(--space-2);
 }
 
 .matrix__cell {
-  padding: 24px;
-  border: 1px solid var(--slate);
+  padding: var(--space-3);
+  border: var(--hairline) solid var(--slate);
   border-radius: var(--r-lg);
   background: var(--graphite);
   display: flex;
   flex-direction: column;
-  transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+  transition: border-color var(--dur) var(--ease);
 }
 .matrix__cell:hover {
-  border-color: #3a3a3a;
-  transform: translateY(-2px);
+  border-color: var(--border-structural);
 }
 
 .matrix__icon {
@@ -52,7 +51,7 @@
   height: 36px;
   border-radius: var(--r-sm);
   background: var(--obsidian-lift);
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--slate);
   color: var(--emerald);
   display: inline-flex;
   align-items: center;
@@ -107,7 +106,7 @@
   left: 0;
   top: 7px;
   width: 6px;
-  height: 1px;
+  height: var(--hairline);
   background: var(--ash);
 }
 

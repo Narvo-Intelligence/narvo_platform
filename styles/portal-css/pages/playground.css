@@ -43,7 +43,7 @@
 }
 .playground__step {
   padding: 20px;
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--slate);
   border-radius: var(--r-lg);
   background: var(--graphite);
 }

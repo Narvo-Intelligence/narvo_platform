@@ -29,7 +29,7 @@
   align-items: center;
   gap: 10px;
   padding: 12px 18px;
-  border: 1px solid rgba(16,185,129,0.35);
+  border: var(--hairline) solid rgba(16,185,129,0.35);
   border-radius: var(--r-md);
   background: var(--emerald-tint);
   color: var(--emerald);
@@ -40,7 +40,7 @@
 }
 
 .status__list {
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--slate);
   border-radius: var(--r-lg);
   background: var(--graphite);
   overflow: hidden;
@@ -52,7 +52,7 @@
   gap: 16px;
   align-items: center;
   padding: 16px 20px;
-  border-top: 1px solid var(--slate);
+  border-top: var(--hairline) solid var(--slate);
 }
 .status__row:first-child { border-top: 0; }
 .status__service {
@@ -77,7 +77,7 @@
 }
 
 .status__incidents {
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--slate);
   border-radius: var(--r-lg);
   background: var(--graphite);
   padding: 24px;

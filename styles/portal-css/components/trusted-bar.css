@@ -1,9 +1,9 @@
 .trusted-bar {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  padding: clamp(18px, 2.5vh, 26px) 0;
+  border-top: var(--hairline) solid var(--divider-faint);
+  border-bottom: var(--hairline) solid var(--divider-faint);
+  padding: clamp(var(--space-2), 2.5vh, var(--space-3)) 0;
   background: rgba(0, 0, 0, 0.28);
-  margin-top: clamp(28px, 4vh, 48px);
+  margin-top: clamp(var(--space-3), 4vh, var(--space-6));
 }
 .trusted-bar__inner {
   max-width: var(--content-max);
@@ -11,7 +11,7 @@
   padding: 0 var(--gutter);
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: var(--space-3);
   flex-wrap: wrap;
 }
 .trusted-bar__label {
@@ -21,7 +21,7 @@
   color: var(--ash);
   text-transform: uppercase;
   padding-right: 20px;
-  border-right: 1px solid var(--slate);
+  border-right: var(--hairline) solid var(--slate);
 }
 .trusted-bar__list {
   list-style: none;

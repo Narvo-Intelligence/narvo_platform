@@ -5,7 +5,7 @@
   padding: 0 var(--gutter);
   max-width: var(--content-max);
   margin: 0 auto;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: var(--hairline) solid var(--divider-faint);
 }
 .auth-brand {
   display: inline-flex;

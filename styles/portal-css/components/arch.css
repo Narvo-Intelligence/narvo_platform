@@ -1,7 +1,7 @@
 .arch {
   display: grid;
   grid-template-columns: 1fr 360px;
-  gap: 48px;
+  gap: var(--space-6);
   align-items: center;
 }
 
@@ -14,7 +14,7 @@
 
 .arch__node {
   padding: 24px 20px;
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--slate);
   border-radius: var(--r-lg);
   background: var(--graphite);
   min-width: 0;
@@ -69,7 +69,7 @@
   left: 0;
   top: 8px;
   width: 6px;
-  height: 1px;
+  height: var(--hairline);
   background: var(--ash);
 }
 
@@ -105,7 +105,7 @@
 
 .arch__note {
   padding: 24px;
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--slate);
   border-radius: var(--r-lg);
   background: var(--graphite);
 }

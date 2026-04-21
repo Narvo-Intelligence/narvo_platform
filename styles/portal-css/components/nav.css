@@ -5,7 +5,7 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   background: rgba(10, 10, 10, 0.72);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: var(--hairline) solid var(--divider-faint);
 }
 
 .nav__inner {
@@ -65,7 +65,7 @@
   content: "";
   position: absolute;
   left: 0; right: 0; bottom: -22px;
-  height: 1px;
+  height: var(--hairline);
   background: var(--signal);
 }
 
@@ -113,7 +113,7 @@
     flex-direction: column;
     padding: 20px var(--gutter);
     background: var(--void);
-    border-bottom: 1px solid var(--slate);
+    border-bottom: var(--hairline) solid var(--slate);
     gap: 16px;
   }
 }

@@ -11,7 +11,7 @@
   width: 100%;
   max-width: 400px;
   padding: 36px;
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--slate);
   border-radius: var(--r-lg);
   background: var(--graphite);
 }
@@ -55,7 +55,7 @@
 }
 .auth__input {
   background: var(--obsidian-lift);
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--slate);
   color: var(--chalk);
   border-radius: var(--r-md);
   padding: 12px 14px;
@@ -90,7 +90,7 @@
 .auth__sep::after {
   content: "";
   flex: 1;
-  height: 1px;
+  height: var(--hairline);
   background: var(--slate);
 }
 
@@ -102,6 +102,6 @@
 }
 .auth__foot a {
   color: var(--chalk);
-  border-bottom: 1px solid var(--signal);
+  border-bottom: var(--hairline) solid var(--signal);
 }
 .auth__foot a:hover { color: var(--signal); }

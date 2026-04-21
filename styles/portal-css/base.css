@@ -8,8 +8,8 @@ body {
   background: var(--void);
   color: var(--chalk);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.55;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -35,7 +35,7 @@ kbd {
   font-family: var(--font-mono);
   font-size: 11px;
   padding: 2px 6px;
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--slate);
   border-bottom-width: 2px;
   border-radius: 0;
   background: var(--graphite);
@@ -55,11 +55,11 @@ kbd {
 .page-eyebrow {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--text-mono-sm);
   letter-spacing: 0.12em;
   color: var(--signal);
   text-transform: uppercase;
-  margin-bottom: 14px;
+  margin-bottom: var(--space-2);
 }
 
 @media (prefers-reduced-motion: reduce) {

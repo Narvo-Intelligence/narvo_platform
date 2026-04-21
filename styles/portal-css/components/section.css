@@ -37,7 +37,7 @@
   padding: 1px 6px;
   background: var(--emerald-tint);
   border-radius: 0;
-  border: 1px solid rgba(16,185,129,0.25);
+  border: var(--hairline) solid rgba(16,185,129,0.25);
 }
 
 @media (max-width: 780px) {

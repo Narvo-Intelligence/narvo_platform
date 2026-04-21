@@ -15,6 +15,7 @@
   --space-4: calc(var(--grid-unit) * 4);
   --space-5: calc(var(--grid-unit) * 5);
   --space-6: calc(var(--grid-unit) * 6);
+  --space-7: calc(var(--grid-unit) * 7);
   --space-8: calc(var(--grid-unit) * 8);
 
   /* Canvas */
@@ -47,6 +48,18 @@
   /* Typography — wired from next/font on <html> */
   --font-body: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, "SF Mono", menlo, consolas, monospace;
+  --text-body: 16px;
+  --text-ui: 13px;
+  --text-label: 12px;
+  --text-mono-sm: 11px;
+  --text-mono-xs: 10px;
+  --leading-body: 1.55;
+  --leading-tight: 1.25;
+
+  /* Dividers — hairline on void (shared header/footer/sections) */
+  --divider-faint: rgba(255, 255, 255, 0.06);
+  --divider-muted: rgba(255, 255, 255, 0.08);
+  --divider-strong: rgba(255, 255, 255, 0.12);
 
   /* Radius — zero for technical / Swiss surface language */
   --r-sm: 0;

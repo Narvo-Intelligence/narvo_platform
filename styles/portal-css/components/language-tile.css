@@ -1,25 +1,24 @@
 .lang-grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 12px;
+  gap: var(--space-2);
 }
 
 .lang {
   text-align: left;
-  padding: 18px;
-  border: 1px solid var(--slate);
+  padding: var(--space-3);
+  border: var(--hairline) solid var(--slate);
   border-radius: var(--r-lg);
   background: var(--graphite);
   display: flex;
   flex-direction: column;
   gap: 6px;
-  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  transition: border-color var(--dur) var(--ease);
   position: relative;
   overflow: hidden;
 }
 .lang:hover {
-  transform: translateY(-2px);
-  border-color: rgba(242,92,5,0.4);
+  border-color: rgba(242, 92, 5, 0.4);
 }
 .lang.is-playing {
   border-color: rgba(242,92,5,0.5);
@@ -75,7 +74,9 @@
   opacity: 0.7;
   cursor: default;
 }
-.lang--more:hover { transform: none; }
+.lang--more:hover {
+  border-color: var(--slate);
+}
 
 @media (max-width: 1100px) {
   .lang-grid { grid-template-columns: repeat(3, 1fr); }

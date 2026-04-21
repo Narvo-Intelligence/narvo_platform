@@ -1,10 +1,10 @@
 .hero__stats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
+  gap: var(--space-3);
   margin: 0;
-  padding: 24px 0 0;
-  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: var(--space-3) 0 0;
+  border-top: var(--hairline) solid var(--divider-muted);
 }
 .hero__stats > div { min-width: 0; }
 .hero__stats dt {
@@ -24,5 +24,8 @@
 .stat-num { font-variant-numeric: tabular-nums; }
 
 @media (max-width: 780px) {
-  .hero__stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .hero__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+  }
 }

@@ -17,7 +17,7 @@
   align-items: center;
   gap: 16px;
   padding: 10px 14px;
-  border-bottom: 1px solid var(--slate);
+  border-bottom: var(--hairline) solid var(--slate);
   background: rgba(0,0,0,0.3);
 }
 .terminal__dots {
@@ -97,7 +97,7 @@
   flex-direction: column;
 }
 .terminal__col--req {
-  border-right: 1px solid var(--slate);
+  border-right: var(--hairline) solid var(--slate);
   background: rgba(0,0,0,0.25);
 }
 
@@ -114,7 +114,7 @@
 }
 .col__tag {
   padding: 2px 6px;
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--slate);
   border-radius: 0;
   color: var(--ash);
   letter-spacing: 0.05em;
@@ -210,7 +210,7 @@
   padding: 10px 12px;
   border-radius: var(--r-md);
   background: linear-gradient(90deg, rgba(242,92,5,0.10), rgba(242,92,5,0.02));
-  border: 1px solid rgba(242,92,5,0.3);
+  border: var(--hairline) solid rgba(242,92,5,0.3);
 }
 .audio-card__play {
   width: 36px;
@@ -282,7 +282,7 @@
   border-radius: var(--r-pill);
   background: var(--emerald-tint);
   color: var(--emerald);
-  border: 1px solid rgba(16,185,129,0.35);
+  border: var(--hairline) solid rgba(16,185,129,0.35);
 }
 .provenance__dot {
   width: 6px;
@@ -303,7 +303,7 @@
   padding: 2px 7px;
   border-radius: 0;
   background: var(--graphite);
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--slate);
   color: var(--ash);
   font-size: 10px;
 }
@@ -313,7 +313,7 @@
   align-items: center;
   gap: 16px;
   padding: 10px 14px;
-  border-top: 1px solid var(--slate);
+  border-top: var(--hairline) solid var(--slate);
   background: rgba(0,0,0,0.25);
   font-size: 11px;
   color: var(--ash);
@@ -329,6 +329,6 @@
   .terminal__body { grid-template-columns: 1fr; }
   .terminal__col--req {
     border-right: none;
-    border-bottom: 1px solid var(--slate);
+    border-bottom: var(--hairline) solid var(--slate);
   }
 }
