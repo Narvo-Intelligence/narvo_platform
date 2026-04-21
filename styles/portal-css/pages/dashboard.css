@@ -39,6 +39,18 @@
   color: var(--signal);
   border-bottom: var(--hairline) solid var(--signal);
 }
+button.dashboard__gate-link {
+  padding: 0;
+  border: none;
+  border-bottom: var(--hairline) solid var(--signal);
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+button.dashboard__gate-link:hover {
+  color: var(--signal-hover);
+  border-bottom-color: var(--signal-hover);
+}
 .dashboard__gate {
   display: inline-flex;
   align-items: center;

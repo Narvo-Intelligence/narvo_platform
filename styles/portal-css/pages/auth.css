@@ -105,3 +105,38 @@
   border-bottom: var(--hairline) solid var(--signal);
 }
 .auth__foot a:hover { color: var(--signal); }
+
+.auth__banner {
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(242, 242, 242, 0.75);
+  background: rgba(0, 0, 0, 0.35);
+  border: var(--hairline) solid var(--slate);
+  border-radius: var(--r-md);
+}
+.auth__banner code {
+  font-size: 12px;
+  color: var(--syntax-cyan);
+}
+
+.auth__error {
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #fecaca;
+  background: rgba(239, 68, 68, 0.12);
+  border: var(--hairline) solid rgba(239, 68, 68, 0.35);
+  border-radius: var(--r-md);
+}
+
+.auth__info {
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: rgba(242, 242, 242, 0.82);
+  background: rgba(16, 185, 129, 0.1);
+  border: var(--hairline) solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--r-md);
+}

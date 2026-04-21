@@ -18,6 +18,8 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+**Phase C — auth:** set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` in `.env.local` (see `.env.example`). Sign-in/up use the browser client; static export means no Next middleware — session is client-side until hosting changes.
+
 ## Scripts
 
 | Command | Description |
