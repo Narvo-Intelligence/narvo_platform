@@ -17,6 +17,25 @@
   --space-6: calc(var(--grid-unit) * 6);
   --space-7: calc(var(--grid-unit) * 7);
   --space-8: calc(var(--grid-unit) * 8);
+  --space-9: calc(var(--grid-unit) * 9);
+  --space-10: calc(var(--grid-unit) * 10);
+  --space-11: calc(var(--grid-unit) * 11);
+  --space-12: calc(var(--grid-unit) * 12);
+  --space-15: calc(var(--grid-unit) * 15);
+
+  /* Fractional steps (same 8px module) */
+  --space-half: calc(var(--grid-unit) / 2);
+  --space-mi: calc(var(--grid-unit) * 0.75);
+  --space-1q: calc(var(--grid-unit) * 1.25);
+  --space-1h: calc(var(--grid-unit) * 1.5);
+  --space-1t: calc(var(--grid-unit) * 1.75);
+  --space-2q: calc(var(--grid-unit) * 2.25);
+  --space-2h: calc(var(--grid-unit) * 2.5);
+  --space-2t: calc(var(--grid-unit) * 2.75);
+  --space-3h: calc(var(--grid-unit) * 3.5);
+  --space-3q: calc(var(--grid-unit) * 3.25);
+  --space-6h: calc(var(--grid-unit) * 6.5);
+  --space-12h: calc(var(--grid-unit) * 12.5);
 
   /* Canvas */
   --void: #0a0a0a;

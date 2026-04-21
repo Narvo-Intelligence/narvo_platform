@@ -1,7 +1,7 @@
 /* Bento product grid — Supabase-style asymmetric tiles, Narvo tokens */
 
 .bento {
-  padding: clamp(56px, 10vh, 100px) 0 clamp(48px, 8vh, 88px);
+  padding: clamp(var(--space-7), 10vh, var(--space-12h)) 0 clamp(var(--space-6), 8vh, var(--space-11));
 }
 
 .bento__inner {
@@ -13,7 +13,7 @@
 .bento__head {
   text-align: center;
   max-width: 46rem;
-  margin: 0 auto clamp(40px, 5vh, 56px);
+  margin: 0 auto clamp(var(--space-5), 5vh, var(--space-7));
 }
 
 .bento__title {
@@ -21,7 +21,7 @@
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.2;
-  margin: 0 0 16px;
+  margin: 0 0 var(--space-2);
   color: var(--chalk);
 }
 
@@ -50,12 +50,12 @@
 .bento__grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 16px;
+  gap: var(--space-2);
 }
 
 .bento-card {
   position: relative;
-  padding: 24px 22px;
+  padding: var(--space-3) var(--space-2t);
   border: var(--hairline) solid var(--slate);
   border-radius: var(--r-lg);
   background: var(--graphite);
@@ -80,7 +80,7 @@
 .bento-card--synthesis {
   grid-column: 1 / span 7;
   grid-row: span 2;
-  min-height: 320px;
+  min-height: calc(var(--grid-unit) * 40);
 }
 
 .bento-card--tts {
@@ -109,8 +109,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 14px;
+  gap: var(--space-1q);
+  margin-bottom: var(--space-1t);
   font-family: var(--font-mono);
   font-size: 11px;
 }
@@ -124,12 +124,12 @@
   font-size: clamp(18px, 1.5vw, 22px);
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin: 0 0 10px;
+  margin: 0 0 var(--space-1q);
   line-height: 1.25;
 }
 
 .bento-card__body {
-  margin: 0 0 16px;
+  margin: 0 0 var(--space-2);
   font-size: 14px;
   line-height: 1.58;
   color: rgba(242, 242, 242, 0.65);
@@ -138,8 +138,8 @@
 
 .bento-card__viz {
   margin-top: auto;
-  margin-bottom: 16px;
-  min-height: 100px;
+  margin-bottom: var(--space-2);
+  min-height: var(--space-12h);
   border-radius: var(--r-md);
   border: var(--hairline) solid var(--slate);
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), var(--void));
@@ -148,7 +148,7 @@
 
 .bento-viz--doc {
   height: 100%;
-  min-height: 120px;
+  min-height: var(--space-15);
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, transparent 45%),
     repeating-linear-gradient(
@@ -163,21 +163,21 @@
 .bento-card__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 14px;
+  gap: var(--space-1);
+  margin-bottom: var(--space-1t);
 }
 
 .bento-tag {
   font-family: var(--font-mono);
   font-size: 10px;
-  padding: 4px 8px;
+  padding: var(--space-half) var(--space-1);
   border-radius: var(--r-pill);
   border: var(--hairline) solid var(--slate);
   color: var(--ash);
 }
 
 .bento-mini-list {
-  margin: 0 0 14px;
+  margin: 0 0 var(--space-1t);
   padding-left: 1.1rem;
   font-size: 13px;
   color: rgba(242, 242, 242, 0.58);
@@ -191,7 +191,7 @@
   color: var(--emerald);
   align-self: flex-start;
   margin-top: auto;
-  padding: 6px 0;
+  padding: var(--space-mi) 0;
   border-bottom: var(--hairline) solid transparent;
   transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
@@ -208,7 +208,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ash);
-  padding: 6px 10px;
+  padding: var(--space-mi) var(--space-1q);
   border: var(--hairline) dashed var(--slate);
   border-radius: var(--r-pill);
 }
