@@ -1,0 +1,17 @@
+{
+  "updatedAt": "2026-04-22T00:00:00.000Z",
+  "headline": "All systems operational.",
+  "lede": "Live health of every Narvo Platform service. Historic uptime window: 30 days. Incident timeline below.",
+  "banner": {
+    "label": "All systems operational",
+    "healthy": true
+  },
+  "services": [
+    { "name": "Synthesis API", "status": "operational", "uptime": "99.8%" },
+    { "name": "Broadcast TTS", "status": "operational", "uptime": "99.7%" },
+    { "name": "Provenance Tag", "status": "operational", "uptime": "99.6%" },
+    { "name": "Translation API", "status": "operational", "uptime": "99.8%" },
+    { "name": "Audio Delivery (CDN)", "status": "operational", "uptime": "99.9%" }
+  ],
+  "incidents": []
+}

@@ -62,6 +62,14 @@ button.dashboard__gate-link:hover {
   font-size: 13px;
 }
 
+.dashboard__data-meta {
+  font-size: 12px;
+  color: rgba(242, 242, 242, 0.45);
+  font-family: var(--font-mono);
+  margin: -32px 0 40px;
+  line-height: 1.5;
+}
+
 .dashboard__overview {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

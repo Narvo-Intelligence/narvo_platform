@@ -7,19 +7,30 @@
 
 import { useEffect, useRef } from "react";
 
-export function DashboardGauge() {
+export type DashboardGaugeProps = {
+  percent?: number;
+  label?: string;
+  detail?: string;
+};
+
+export function DashboardGauge({
+  percent = 82,
+  label = "Monthly quota",
+  detail = "41,000 / 50,000 calls · 82% used",
+}: DashboardGaugeProps) {
   const barRef = useRef<HTMLSpanElement>(null);
+  const pct = Math.min(100, Math.max(0, Number.isFinite(percent) ? percent : 82));
 
   useEffect(() => {
     const bar = barRef.current;
     if (!bar) return;
+    bar.style.width = "0%";
     const reduceMotion =
       typeof window.matchMedia !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const target = parseFloat(bar.dataset.value ?? "82");
     if (reduceMotion) {
-      bar.style.width = `${target}%`;
+      bar.style.width = `${pct}%`;
       return;
     }
 
@@ -31,7 +42,7 @@ export function DashboardGauge() {
         entries.forEach((e) => {
           if (e.isIntersecting) {
             bar.style.transition = "width 1600ms cubic-bezier(0.4, 0, 0.2, 1)";
-            bar.style.width = `${target}%`;
+            bar.style.width = `${pct}%`;
             obs.unobserve(e.target);
           }
         });
@@ -40,16 +51,16 @@ export function DashboardGauge() {
     );
     obs.observe(parent);
     return () => obs.disconnect();
-  }, []);
+  }, [pct]);
 
   return (
     <div className="dashboard__gauge" data-gauge-bar>
       <div className="dashboard__gauge-head">
-        <strong>Monthly quota</strong>
-        <span>41,000 / 50,000 calls · 82% used</span>
+        <strong>{label}</strong>
+        <span>{detail}</span>
       </div>
       <div className="dashboard__gauge-bar">
-        <span ref={barRef} data-value="82" style={{ width: "0%" }} />
+        <span ref={barRef} data-value={String(pct)} style={{ width: "0%" }} />
       </div>
     </div>
   );

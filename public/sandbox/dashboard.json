@@ -1,0 +1,21 @@
+{
+  "sandbox": true,
+  "tenantId": "tnt_a3f8c2e1_publisher",
+  "tenantTier": "Publisher tier",
+  "tiles": [
+    { "label": "Calls today", "value": "1,842", "sub": "+12% vs. yesterday" },
+    { "label": "P95 latency (7d)", "value": "2.71s", "sub": "synthesis · target < 3.0s" },
+    { "label": "Error rate (7d)", "value": "0.08%", "sub": "5xx / total", "valueTone": "ok" },
+    { "label": "Renewal", "value": "May 14", "sub": "Publisher · $49/mo" }
+  ],
+  "gauge": {
+    "percent": 82,
+    "label": "Monthly quota",
+    "detail": "41,000 / 50,000 calls · 82% used"
+  },
+  "apiKeys": [
+    { "name": "Production", "masked": "nrv_sk_live_a3f8c2e1••••••••••••" },
+    { "name": "Staging", "masked": "nrv_sk_live_9f2e7b3d••••••••••••" },
+    { "name": "Sandbox", "masked": "nrv_sk_test_612ac5d8••••••••••••" }
+  ]
+}

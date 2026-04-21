@@ -1,13 +1,28 @@
 "use client";
 
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { useEffect, useState } from "react";
 import type { Session } from "@supabase/supabase-js";
 import { DashboardGauge } from "@/components/dashboard/DashboardGauge";
+import {
+  fetchDashboardSandbox,
+  getDashboardSandboxUrl,
+  mergeDashboardView,
+  type DashboardResolvedView,
+} from "@/lib/dashboard-sandbox";
 import { getSupabaseBrowserClient, isSupabaseConfigured } from "@/lib/supabase/browser";
+
+function tileValueStyle(tone: "ok" | "default" | "err" | undefined): CSSProperties | undefined {
+  if (tone === "ok") return { color: "var(--emerald)" };
+  if (tone === "err") return { color: "var(--fault)" };
+  return undefined;
+}
 
 export function DashboardClient() {
   const [session, setSession] = useState<Session | null | undefined>(undefined);
+  const [view, setView] = useState<DashboardResolvedView>(() => mergeDashboardView({}));
+  const [dataNote, setDataNote] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -38,6 +53,21 @@ export function DashboardClient() {
     };
   }, []);
 
+  useEffect(() => {
+    const ac = new AbortController();
+    const url = getDashboardSandboxUrl();
+    void fetchDashboardSandbox(ac.signal).then((result) => {
+      if (ac.signal.aborted) return;
+      setView(result.view);
+      setDataNote(
+        result.ok
+          ? `Sandbox JSON: ${url}${result.view.sandbox ? " · sandbox" : ""}`
+          : `Sandbox JSON: ${url} — ${result.error}`,
+      );
+    });
+    return () => ac.abort();
+  }, []);
+
   async function signOut() {
     const supabase = getSupabaseBrowserClient();
     await supabase?.auth.signOut();
@@ -55,9 +85,9 @@ export function DashboardClient() {
           <h1>Overview</h1>
           <p className="dashboard__sub">
             <code>
-              tenant_id: <span className="mono--accent">tnt_a3f8c2e1_publisher</span>
+              tenant_id: <span className="mono--accent">{view.tenantId}</span>
             </code>{" "}
-            · Publisher tier
+            · {view.tenantTier}
           </p>
         </div>
         <span className="dashboard__gate">
@@ -92,56 +122,33 @@ export function DashboardClient() {
         </span>
       </header>
 
+      {dataNote ? <p className="dashboard__data-meta">{dataNote}</p> : null}
+
       <div className="dashboard__overview">
-        <div className="dashboard__tile">
-          <div className="dashboard__tile-label">Calls today</div>
-          <div className="dashboard__tile-value">1,842</div>
-          <div className="dashboard__tile-sub">+12% vs. yesterday</div>
-        </div>
-        <div className="dashboard__tile">
-          <div className="dashboard__tile-label">P95 latency (7d)</div>
-          <div className="dashboard__tile-value">2.71s</div>
-          <div className="dashboard__tile-sub">synthesis · target &lt; 3.0s</div>
-        </div>
-        <div className="dashboard__tile">
-          <div className="dashboard__tile-label">Error rate (7d)</div>
-          <div className="dashboard__tile-value" style={{ color: "var(--emerald)" }}>
-            0.08%
+        {view.tiles.map((tile) => (
+          <div key={tile.label} className="dashboard__tile">
+            <div className="dashboard__tile-label">{tile.label}</div>
+            <div className="dashboard__tile-value" style={tileValueStyle(tile.valueTone)}>
+              {tile.value}
+            </div>
+            <div className="dashboard__tile-sub">{tile.sub}</div>
           </div>
-          <div className="dashboard__tile-sub">5xx / total</div>
-        </div>
-        <div className="dashboard__tile">
-          <div className="dashboard__tile-label">Renewal</div>
-          <div className="dashboard__tile-value">May 14</div>
-          <div className="dashboard__tile-sub">Publisher · $49/mo</div>
-        </div>
+        ))}
       </div>
 
-      <DashboardGauge />
+      <DashboardGauge percent={view.gauge.percent} label={view.gauge.label} detail={view.gauge.detail} />
 
       <div className="dashboard__keys">
         <h2>API keys</h2>
-        <div className="dashboard__key-row">
-          <span className="dashboard__key-name">Production</span>
-          <span className="dashboard__key-val">nrv_sk_live_a3f8c2e1••••••••••••</span>
-          <a className="btn btn--ghost" href="#rotate">
-            Rotate
-          </a>
-        </div>
-        <div className="dashboard__key-row">
-          <span className="dashboard__key-name">Staging</span>
-          <span className="dashboard__key-val">nrv_sk_live_9f2e7b3d••••••••••••</span>
-          <a className="btn btn--ghost" href="#rotate">
-            Rotate
-          </a>
-        </div>
-        <div className="dashboard__key-row">
-          <span className="dashboard__key-name">Sandbox</span>
-          <span className="dashboard__key-val">nrv_sk_test_612ac5d8••••••••••••</span>
-          <a className="btn btn--ghost" href="#rotate">
-            Rotate
-          </a>
-        </div>
+        {view.apiKeys.map((k) => (
+          <div key={k.name} className="dashboard__key-row">
+            <span className="dashboard__key-name">{k.name}</span>
+            <span className="dashboard__key-val">{k.masked}</span>
+            <a className="btn btn--ghost" href="#rotate">
+              Rotate
+            </a>
+          </div>
+        ))}
       </div>
     </section>
   );
