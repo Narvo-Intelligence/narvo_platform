@@ -83,7 +83,7 @@
   color: var(--emerald);
   padding: 1px 5px;
   background: var(--emerald-tint);
-  border-radius: 3px;
+  border-radius: 0;
 }
 
 .matrix__bullets {

@@ -1,55 +1,67 @@
 /* =========================================================
-   Stealth Infrastructure tokens.
-   Source of truth: documentations/current/product/New_Narvo_B2B.md §3
-   and documentations/current/design/Narvo_Design_Tokens.md §11.4.
+   Narvo Platform — Swiss modular grid + technical tokens.
+   8px base unit; content width = 160 × 8px (1280px).
+   Corner radius: 0 (brutalist / lab UI).
    ========================================================= */
 
 :root {
+  /* Swiss grid — spacing & rhythm */
+  --grid-unit: 8px;
+  --grid-cols: 12;
+  --grid-gutter: calc(var(--grid-unit) * 3); /* 24px */
+  --space-1: calc(var(--grid-unit) * 1);
+  --space-2: calc(var(--grid-unit) * 2);
+  --space-3: calc(var(--grid-unit) * 3);
+  --space-4: calc(var(--grid-unit) * 4);
+  --space-5: calc(var(--grid-unit) * 5);
+  --space-6: calc(var(--grid-unit) * 6);
+  --space-8: calc(var(--grid-unit) * 8);
+
   /* Canvas */
-  --void: #0A0A0A;
+  --void: #0a0a0a;
   --graphite: #111111;
-  --obsidian-lift: #1A1A1A;
-  --slate: #2A2A2A;
+  --obsidian-lift: #1a1a1a;
+  --slate: #2a2a2a;
   --slate-2: #1f1f1f;
 
   /* Text */
-  --chalk: #F2F2F2;
+  --chalk: #f2f2f2;
   --ash: #888888;
   --ash-dim: #5a5a5a;
 
   /* Brand thread + state */
-  --signal: #F25C05;
-  --signal-hover: #D94F00;
-  --signal-tint: rgba(242, 92, 5, 0.10);
+  --signal: #f25c05;
+  --signal-hover: #d94f00;
+  --signal-tint: rgba(242, 92, 5, 0.1);
   --signal-glow: rgba(242, 92, 5, 0.35);
 
-  --emerald: #10B981;
+  --emerald: #10b981;
   --emerald-tint: rgba(16, 185, 129, 0.12);
-  --amber: #F59E0B;
-  --fault: #EF4444;
+  --amber: #f59e0b;
+  --fault: #ef4444;
 
-  --syntax-cyan: #67E8F9;
-  --syntax-purple: #A78BFA;
+  --syntax-cyan: #67e8f9;
+  --syntax-purple: #a78bfa;
   --syntax-string: #d0d0d0;
 
-  /* Typography — wired from next/font on <html> (see root layout CSS variables). */
+  /* Typography — wired from next/font on <html> */
   --font-body: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SF Mono", menlo, consolas, monospace;
 
-  /* Radius */
-  --r-sm: 6px;
-  --r-md: 10px;
-  --r-lg: 14px;
-  --r-xl: 18px;
-  --r-pill: 999px;
+  /* Radius — zero for technical / Swiss surface language */
+  --r-sm: 0;
+  --r-md: 0;
+  --r-lg: 0;
+  --r-xl: 0;
+  --r-pill: 0;
 
   /* Motion */
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --dur: 150ms;
   --dur-slow: 280ms;
 
-  /* Layout */
-  --gutter: clamp(20px, 4vw, 56px);
-  --content-max: 1280px;
-  --nav-h: 68px;
+  /* Layout — gutters on the 8px grid; max width = 12 cols × 8 × 13.333… → 1280 */
+  --gutter: clamp(var(--grid-gutter), 4vw, var(--space-8));
+  --content-max: calc(var(--grid-unit) * 160);
+  --nav-h: calc(var(--grid-unit) * 7); /* 56px — header bar */
 }

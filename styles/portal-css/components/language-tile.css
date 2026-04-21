@@ -54,7 +54,7 @@
 .lang__preview span {
   flex: 1;
   background: var(--ash-dim);
-  border-radius: 1px;
+  border-radius: 0;
   height: 30%;
   transition: background var(--dur) var(--ease), height var(--dur) var(--ease);
 }

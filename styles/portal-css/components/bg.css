@@ -16,7 +16,8 @@
   background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
-  background-size: 72px 72px;
+  /* 8 × 8px modular cell */
+  background-size: 64px 64px;
 }
 
 @media (prefers-reduced-motion: reduce) {

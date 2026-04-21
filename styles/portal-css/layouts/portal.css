@@ -1,3 +1,2 @@
-/* PortalLayout — nothing required at layout scope right now;
-   Nav + Footer own their own styles. This file stays to match the Inertia
-   layouts/<name>.css convention and give migration a clean target. */
+/* PortalLayout — shell lives in platform-header.css (sticky header + main flex).
+   Swiss rail: .platform-main__scroll grid + .swiss-bleed full-width helper. */

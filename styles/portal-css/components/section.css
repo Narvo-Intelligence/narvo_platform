@@ -36,7 +36,7 @@
   color: var(--emerald);
   padding: 1px 6px;
   background: var(--emerald-tint);
-  border-radius: 4px;
+  border-radius: 0;
   border: 1px solid rgba(16,185,129,0.25);
 }
 

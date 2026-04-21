@@ -256,7 +256,7 @@
 .land-qs__dots span {
   width: 10px;
   height: 10px;
-  border-radius: 50%;
+  border-radius: 0;
   background: var(--slate);
 }
 .land-qs__dots span:nth-child(1) {
@@ -355,7 +355,7 @@
 .land-preview__dots span {
   width: 10px;
   height: 10px;
-  border-radius: 50%;
+  border-radius: 0;
   background: var(--slate);
 }
 .land-preview__dots span:nth-child(1) {
@@ -473,7 +473,7 @@
 }
 .land-preview__bars span {
   flex: 1;
-  border-radius: 4px 4px 0 0;
+  border-radius: 0;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.06));
   min-height: 12px;
 }

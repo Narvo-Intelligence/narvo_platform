@@ -21,12 +21,12 @@
 .platform-header__inner {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: 0 clamp(16px, 3vw, 28px);
-  height: 52px;
+  padding: 0 var(--gutter);
+  height: var(--nav-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: var(--space-2);
 }
 
 .platform-header__brand {
@@ -45,7 +45,7 @@
 .platform-header__mark {
   width: 6px;
   height: 6px;
-  border-radius: 999px;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.35);
   flex-shrink: 0;
 }
@@ -204,9 +204,25 @@
   flex-direction: column;
 }
 
+/* Swiss column rail — center track = max content width */
 .platform-main__scroll {
   flex: 1;
   width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns:
+    1fr
+    minmax(0, min(var(--content-max), calc(100% - 2 * var(--gutter))))
+    1fr;
+}
+
+.platform-main__scroll > * {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.platform-main__scroll > .swiss-bleed {
+  grid-column: 1 / -1;
 }
 
 @media (max-width: 900px) {

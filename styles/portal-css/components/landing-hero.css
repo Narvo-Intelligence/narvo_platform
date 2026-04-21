@@ -75,7 +75,7 @@
   font-size: 0.9em;
   color: var(--syntax-cyan);
   padding: 2px 6px;
-  border-radius: 4px;
+  border-radius: 0;
   background: var(--obsidian-lift);
   border: 1px solid var(--slate);
 }
@@ -126,7 +126,7 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   padding: 3px 6px;
-  border-radius: 4px;
+  border-radius: 0;
   line-height: 1;
 }
 
@@ -181,7 +181,7 @@
   color: var(--ash);
   padding: 3px 8px;
   border: 1px solid var(--slate);
-  border-radius: 4px;
+  border-radius: 0;
   letter-spacing: 0.06em;
 }
 .code-split--hero .code-panel__latency {

@@ -32,7 +32,7 @@
   padding: 1px 6px;
   background: var(--obsidian-lift);
   border: 1px solid var(--slate);
-  border-radius: 4px;
+  border-radius: 0;
 }
 .dashboard__sub .mono--accent { color: var(--emerald); }
 .dashboard__gate-link {
@@ -107,7 +107,7 @@
 }
 .dashboard__gauge-bar {
   height: 10px;
-  border-radius: 6px;
+  border-radius: 0;
   background: var(--obsidian-lift);
   border: 1px solid var(--slate);
   overflow: hidden;
