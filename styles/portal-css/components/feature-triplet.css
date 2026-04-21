@@ -1,6 +1,41 @@
 .features-triplet {
-  padding: clamp(48px, 8vh, 80px) 0;
+  padding: clamp(56px, 9vh, 96px) 0 clamp(48px, 8vh, 80px);
 }
+
+.features-triplet__intro {
+  max-width: var(--content-max);
+  margin: 0 auto clamp(40px, 5vh, 56px);
+  padding: 0 var(--gutter);
+  text-align: center;
+}
+
+.features-triplet__kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--signal);
+  margin: 0 0 14px;
+}
+
+.features-triplet__title {
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin: 0 auto 16px;
+  max-width: 18ch;
+  color: var(--chalk);
+}
+
+.features-triplet__lede {
+  margin: 0 auto;
+  max-width: 42rem;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.65;
+  color: rgba(242, 242, 242, 0.66);
+}
+
 .features-triplet__inner {
   max-width: var(--content-max);
   margin: 0 auto;

@@ -118,7 +118,17 @@ export function FeatureTriplet() {
   }, []);
 
   return (
-    <section ref={ref} className="features-triplet" aria-label="Core features">
+    <section ref={ref} className="features-triplet" aria-labelledby="features-triplet-title">
+      <header className="features-triplet__intro">
+        <p className="features-triplet__kicker">The Narvo stack</p>
+        <h2 className="features-triplet__title" id="features-triplet-title">
+          Use one endpoint — or wire the full pipeline
+        </h2>
+        <p className="features-triplet__lede">
+          Composable APIs with predictable latency — wire synthesis alone or stack TTS, provenance, and translation as
+          you grow. Use what you need in sandbox, then promote the same contracts to production keys.
+        </p>
+      </header>
       <div className="features-triplet__inner">
         {FEATURES.map((f) => (
           <article key={f.title} className="feature-card">

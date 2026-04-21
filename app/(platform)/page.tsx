@@ -15,8 +15,8 @@ export default function HomePage() {
     <>
       <LandingHero />
       <TrustedBar />
-      <ElevateSection />
       <FeatureTriplet />
+      <ElevateSection />
       <EnginesCatalog />
       <UseCaseSplit />
       <ScoreRings />
