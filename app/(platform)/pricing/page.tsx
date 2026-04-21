@@ -1,12 +1,9 @@
 import { ClosingCta } from "@/components/pricing/ClosingCta";
 import { PricingGrid } from "@/components/pricing/PricingGrid";
 import type { Metadata } from "next";
+import { ROUTE_REGISTRY, createRouteMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Pricing",
-  description:
-    "Four tiers — Developer free, Publisher $49/mo, Newsroom $199/mo, Enterprise from $499/mo. Transparent per-call overages.",
-};
+export const metadata: Metadata = createRouteMetadata(ROUTE_REGISTRY.pricing);
 
 export default function PricingPage() {
   return (

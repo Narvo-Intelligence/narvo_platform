@@ -94,6 +94,13 @@
   font-size: 11px;
   color: var(--ash);
 }
+a.footer__status-mini {
+  text-decoration: none;
+  color: inherit;
+}
+a.footer__status-mini:hover {
+  color: var(--emerald);
+}
 
 @media (max-width: 640px) {
   .footer__top {

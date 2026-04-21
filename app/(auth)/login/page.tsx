@@ -1,10 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { LoginForm } from "@/components/auth/LoginForm";
+import { ROUTE_REGISTRY, createRouteMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Sign in",
-};
+export const metadata: Metadata = createRouteMetadata(ROUTE_REGISTRY.login);
 
 export default function LoginPage() {
   return (

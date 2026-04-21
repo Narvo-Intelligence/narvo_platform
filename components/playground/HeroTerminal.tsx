@@ -11,6 +11,7 @@ import {
   executePlaygroundRequest,
   getPlaygroundApiOrigin,
   maskBearer,
+  responseIndicatesSandbox,
 } from "@/lib/playground-api";
 import { PLAYGROUND_FIXTURES, type PlaygroundEndpointKey } from "@/lib/playground-fixtures";
 import { rand, sleep, streamResponse, typeRequest } from "@/lib/terminal-playground";
@@ -54,6 +55,7 @@ export function HeroTerminal({ variant = "inline" }: Props) {
     const bearerInput = $<HTMLInputElement>("[data-bearer]");
     const liveHint = $("[data-live-hint]");
     const footStatus = $("[data-foot-status]");
+    const sandboxChip = $("[data-sandbox-chip]");
     const tabs = root.querySelectorAll<HTMLButtonElement>(".terminal__tabs .tab");
 
     if (
@@ -159,6 +161,23 @@ export function HeroTerminal({ variant = "inline" }: Props) {
         : `<span class="dot dot--err"></span> ${code}`;
     }
 
+    function updateSandboxChip(kind: "hidden" | "fixture" | "api") {
+      if (!sandboxChip) return;
+      if (kind === "hidden") {
+        sandboxChip.hidden = true;
+        sandboxChip.innerHTML = "";
+        sandboxChip.removeAttribute("title");
+        return;
+      }
+      sandboxChip.hidden = false;
+      sandboxChip.title =
+        kind === "fixture" ? "Simulated response from bundled fixtures." : "API marked this response as sandbox.";
+      sandboxChip.innerHTML =
+        kind === "fixture"
+          ? '<span class="pill mono">fixture</span>'
+          : '<span class="pill pill--ok mono">sandbox API</span>';
+    }
+
     async function runLive(fx: (typeof PLAYGROUND_FIXTURES)[PlaygroundEndpointKey], myRun: number) {
       const origin = getPlaygroundApiOrigin();
       const bearer = readBearer();
@@ -170,6 +189,7 @@ export function HeroTerminal({ variant = "inline" }: Props) {
       codeRes.innerHTML = '<span class="c">// calling API…</span>';
       audioPanel.hidden = true;
       provPanel.hidden = true;
+      updateSandboxChip("hidden");
 
       try {
         const result = await executePlaygroundRequest(origin, fx.api.path, bearer, fx.api.body);
@@ -189,6 +209,8 @@ export function HeroTerminal({ variant = "inline" }: Props) {
 
         await streamResponse(codeRes, body, { getRunId, myRun });
         if (myRun !== runId) return;
+
+        updateSandboxChip(responseIndicatesSandbox(body) ? "api" : "hidden");
 
         if (fx.audio && result.ok) {
           const durSec =
@@ -214,6 +236,7 @@ export function HeroTerminal({ variant = "inline" }: Props) {
         }
       } catch (e) {
         if (myRun !== runId) return;
+        updateSandboxChip("hidden");
         latencyEl.textContent = "—";
         latencyEl.style.color = "var(--fault)";
         setFootHttp(0, false);
@@ -253,6 +276,7 @@ export function HeroTerminal({ variant = "inline" }: Props) {
       latencyEl.textContent = `${simLatency}ms`;
       latencyEl.style.color = "var(--emerald)";
       setFootHttp(200, true);
+      updateSandboxChip("fixture");
 
       const body = { ...fx.response } as Record<string, unknown>;
       body.latency_ms = simLatency;
@@ -324,6 +348,7 @@ export function HeroTerminal({ variant = "inline" }: Props) {
       latencyEl.style.color = "var(--ash)";
       setStatus("idle", "idle");
       setFootHttp(200, true);
+      updateSandboxChip("hidden");
       audioPanel.hidden = true;
       provPanel.hidden = true;
 
@@ -544,6 +569,7 @@ export function HeroTerminal({ variant = "inline" }: Props) {
         <span className="foot__item" data-foot-status>
           <span className="dot dot--ok" /> 200 OK
         </span>
+        <span className="foot__item foot__sandbox" data-sandbox-chip hidden aria-live="polite" />
         <span className="foot__item" data-region>
           simulated
         </span>

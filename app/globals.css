@@ -28,5 +28,6 @@
 @import "../styles/portal-css/pages/docs.css";
 @import "../styles/portal-css/pages/status.css";
 @import "../styles/portal-css/pages/auth.css";
+@import "../styles/portal-css/pages/not-found.css";
 
 @import "tailwindcss";

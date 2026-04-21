@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { PLATFORM_TITLE, SITE_URL } from "@/lib/metadata";
+import { HOME_DESCRIPTION, PLATFORM_TITLE, SITE_URL } from "@/lib/metadata";
 
 const geist = Geist({
   variable: "--font-geist-sans",
@@ -21,8 +21,7 @@ export const metadata: Metadata = {
     default: `${PLATFORM_TITLE} — African narrative APIs`,
     template: `%s · ${PLATFORM_TITLE}`,
   },
-  description:
-    "Narrative synthesis, five-language TTS, translation and source provenance — the Narvo News pipeline as versioned REST.",
+  description: HOME_DESCRIPTION,
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },

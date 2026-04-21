@@ -90,3 +90,17 @@ export async function executePlaygroundRequest(
   }
   return { ok: res.ok, status: res.status, latencyMs, json };
 }
+
+/** True when the API marks the payload as sandbox (root, meta, or environment). */
+export function responseIndicatesSandbox(json: unknown): boolean {
+  if (!json || typeof json !== "object") return false;
+  const o = json as Record<string, unknown>;
+  if (o.sandbox === true) return true;
+  if (typeof o.environment === "string" && o.environment.toLowerCase() === "sandbox") return true;
+  const meta = o.meta;
+  if (meta && typeof meta === "object") {
+    const m = meta as Record<string, unknown>;
+    if (m.sandbox === true) return true;
+  }
+  return false;
+}

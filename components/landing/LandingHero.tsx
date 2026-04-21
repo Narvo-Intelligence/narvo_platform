@@ -56,6 +56,9 @@ export function LandingHero() {
             <Link className="btn btn--primary btn--lg" href="/signup/">
               Start your project <span aria-hidden="true">→</span>
             </Link>
+            <Link className="btn btn--ghost btn--lg" href="/dashboard/">
+              Dashboard
+            </Link>
             <a className="btn btn--ghost btn--lg" href={getDocsHomeUrl()}>
               Documentation
             </a>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { DOCS_GUIDE_LINKS } from "@/lib/docs-anchors";
 import { getDocsFragmentUrl, getDocsHomeUrl } from "@/lib/docs";
 
 function LogoSvg() {
@@ -35,8 +36,11 @@ export function PlatformFooter() {
             ·
           </span>
           <a href={getDocsHomeUrl()}>Docs</a>
-          <a href={getDocsFragmentUrl("quickstart")}>Quick start</a>
-          <a href={getDocsFragmentUrl("sdks")}>SDKs</a>
+          {DOCS_GUIDE_LINKS.map(({ label, fragment }) => (
+            <a key={fragment} href={getDocsFragmentUrl(fragment)}>
+              {label}
+            </a>
+          ))}
           <span className="footer__sep" aria-hidden="true">
             ·
           </span>
@@ -47,9 +51,9 @@ export function PlatformFooter() {
         </nav>
 
         <div className="footer__bottom footer__bottom--compact">
-          <span className="footer__status-mini">
+          <Link href="/status/" className="footer__status-mini">
             <span className="dot dot--ok" aria-hidden="true" /> Operational
-          </span>
+          </Link>
           <span>© 2026 Narvo Intelligence Ltd.</span>
         </div>
       </div>

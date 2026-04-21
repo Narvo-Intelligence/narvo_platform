@@ -25,6 +25,9 @@ export function LandingQuickstart() {
             <Link className="land-qs__link" href="/playground/">
               Playground <span aria-hidden="true">→</span>
             </Link>
+            <Link className="land-qs__link" href="/dashboard/">
+              Dashboard <span aria-hidden="true">→</span>
+            </Link>
             <a className="land-qs__link land-qs__link--ghost" href={getDocsHomeUrl()}>
               More examples
             </a>

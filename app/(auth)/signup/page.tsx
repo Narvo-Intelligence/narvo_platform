@@ -1,10 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { SignupForm } from "@/components/auth/SignupForm";
+import { ROUTE_REGISTRY, createRouteMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Create account",
-};
+export const metadata: Metadata = createRouteMetadata(ROUTE_REGISTRY.signup);
 
 export default function SignupPage() {
   return (

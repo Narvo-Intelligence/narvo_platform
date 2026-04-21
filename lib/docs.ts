@@ -1,6 +1,8 @@
 /**
  * Mintlify docs — Phase A decision: hosted on a subdomain (default `docs.platform.narvo.news`).
  * Set NEXT_PUBLIC_DOCS_URL to override (staging URL, preview deployment, etc.).
+ *
+ * Canonical hash fragments for nav links: `@/lib/docs-anchors`.
  */
 
 export const DEFAULT_DOCS_URL = "https://docs.platform.narvo.news";

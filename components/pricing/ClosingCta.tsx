@@ -20,6 +20,9 @@ export function ClosingCta() {
           <Link className="btn btn--primary btn--lg" href="/signup/">
             Get API key <span aria-hidden="true">→</span>
           </Link>
+          <Link className="btn btn--ghost btn--lg" href="/dashboard/">
+            Dashboard
+          </Link>
           <a className="btn btn--ghost btn--lg" href={getDocsHomeUrl()}>
             Read the docs
           </a>

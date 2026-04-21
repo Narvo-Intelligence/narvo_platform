@@ -1,12 +1,9 @@
 import { HeroTerminal } from "@/components/playground/HeroTerminal";
 import { PlaygroundReveal } from "@/components/playground/PlaygroundReveal";
 import type { Metadata } from "next";
+import { ROUTE_REGISTRY, createRouteMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Playground",
-  description:
-    "Live API request builder. Test synthesis, TTS, provenance, and translation against real fixtures before you write a line of SDK code.",
-};
+export const metadata: Metadata = createRouteMetadata(ROUTE_REGISTRY.playground);
 
 export default function PlaygroundPage() {
   return (

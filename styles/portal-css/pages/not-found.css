@@ -1,0 +1,58 @@
+/* Global 404 — no platform shell; root layout + body only. */
+
+.not-found {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: clamp(72px, 14vh, 120px) var(--gutter) 80px;
+  min-height: min(70vh, 720px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found__inner {
+  width: 100%;
+  max-width: 540px;
+  text-align: center;
+}
+
+.not-found__title {
+  margin: 0 0 12px;
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--chalk);
+}
+
+.not-found__lede {
+  margin: 0 0 28px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(242, 242, 242, 0.62);
+}
+
+.not-found__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1h);
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.not-found__fineprint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--ash-dim);
+}
+
+.not-found__inline {
+  color: var(--signal);
+  border-bottom: var(--hairline) solid rgba(242, 92, 5, 0.35);
+  text-decoration: none;
+}
+
+.not-found__inline:hover {
+  color: var(--signal-hover);
+  border-bottom-color: var(--signal-hover);
+}

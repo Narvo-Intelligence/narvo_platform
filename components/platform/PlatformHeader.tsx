@@ -4,19 +4,18 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { DOCS_HEADER_API_MENU } from "@/lib/docs-anchors";
 import { getDocsFragmentUrl } from "@/lib/docs";
 
-const API_LINKS = [
-  { label: "Synthesis", href: getDocsFragmentUrl("synthesis") },
-  { label: "Translation", href: getDocsFragmentUrl("translate") },
-  { label: "Broadcast TTS", href: getDocsFragmentUrl("tts") },
-  { label: "Provenance Tag", href: getDocsFragmentUrl("provenance") },
-  { label: "Morning Briefing", href: getDocsFragmentUrl("briefing") },
-] as const;
+const API_LINKS = DOCS_HEADER_API_MENU.map(({ label, fragment }) => ({
+  label,
+  href: getDocsFragmentUrl(fragment),
+})) as readonly { label: string; href: string }[];
 
 const MAIN_LINKS = [
   { href: "/docs/", label: "Docs", match: "/docs" },
   { href: "/playground/", label: "Playground", match: "/playground" },
+  { href: "/dashboard/", label: "Dashboard", match: "/dashboard" },
   { href: "/pricing/", label: "Pricing", match: "/pricing" },
   { href: "/status/", label: "Status", match: "/status" },
 ] as const;

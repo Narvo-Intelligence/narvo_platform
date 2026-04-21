@@ -377,6 +377,10 @@
 }
 .foot__item--right { margin-left: auto; }
 
+.foot__sandbox:not([hidden]) .pill {
+  vertical-align: middle;
+}
+
 @media (max-width: 780px) {
   .terminal__body { grid-template-columns: 1fr; }
   .terminal__col--req {
