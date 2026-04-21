@@ -18,12 +18,11 @@ export function LandingBento() {
       <div className="bento__inner">
         <header className="bento__head">
           <h2 className="bento__title" id="bento-title">
-            Every engine is a <strong>versioned REST surface</strong>
+            Six engines, one <strong>versioned REST</strong> contract
           </h2>
           <p className="bento__lede">
-            Bearer keys, <code className="bento__code">request_id</code> on every response, and optional{" "}
-            <code className="bento__code">provenance</code> blocks — the same discipline you expect from a modern
-            developer platform, tuned for broadcast workloads.
+            Bearer keys, <code className="bento__code">request_id</code> on responses, optional{" "}
+            <code className="bento__code">provenance</code> — built for broadcast-scale workloads.
           </p>
         </header>
 
@@ -39,7 +38,7 @@ export function LandingBento() {
               <div className="bento-viz bento-viz--doc" />
             </div>
             <a className="bento-card__link" href={getDocsFragmentUrl(synthesis.key)}>
-              Open reference <span aria-hidden="true">→</span>
+              API reference <span aria-hidden="true">→</span>
             </a>
           </article>
 
@@ -58,7 +57,7 @@ export function LandingBento() {
               ))}
             </div>
             <a className="bento-card__link" href={getDocsFragmentUrl(tts.key)}>
-              Voices &amp; formats <span aria-hidden="true">→</span>
+              Voices / formats <span aria-hidden="true">→</span>
             </a>
           </article>
 
@@ -70,12 +69,12 @@ export function LandingBento() {
             <h3 className="bento-card__title">{provenance.title}</h3>
             <p className="bento-card__body">{provenance.desc}</p>
             <ul className="bento-mini-list">
-              <li>Africa Check · Dubawa</li>
-              <li>Tier-1 Nigerian outlets</li>
-              <li>Consensus score in-line</li>
+              <li>Africa Check, Dubawa, PolitiFact</li>
+              <li>Tier-1 NG outlets</li>
+              <li>Consensus inline</li>
             </ul>
             <a className="bento-card__link" href={getDocsFragmentUrl(provenance.key)}>
-              Trust layers <span aria-hidden="true">→</span>
+              How scoring works <span aria-hidden="true">→</span>
             </a>
           </article>
 
@@ -87,7 +86,7 @@ export function LandingBento() {
             <h3 className="bento-card__title">{translate.title}</h3>
             <p className="bento-card__body">{translate.desc}</p>
             <a className="bento-card__link" href={getDocsFragmentUrl(translate.key)}>
-              Language pairs <span aria-hidden="true">→</span>
+              Supported pairs <span aria-hidden="true">→</span>
             </a>
           </article>
 
@@ -99,7 +98,7 @@ export function LandingBento() {
             <h3 className="bento-card__title">{briefing.title}</h3>
             <p className="bento-card__body">{briefing.desc}</p>
             <a className="bento-card__link" href={getDocsFragmentUrl(briefing.key)}>
-              Embed payloads <span aria-hidden="true">→</span>
+              Briefing payload <span aria-hidden="true">→</span>
             </a>
           </article>
 

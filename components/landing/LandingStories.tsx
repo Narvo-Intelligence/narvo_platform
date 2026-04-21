@@ -6,21 +6,22 @@ import { observeRevealAll } from "@/lib/observers/reveal";
 const STORIES = [
   {
     org: "Publisher network",
-    quote: "Narvo cut our audio production cost by about 80%. Pidgin subscribers finally hear headlines in their own voice — without hiring a TTS team.",
+    quote:
+      "~80% lower audio production cost; Pidgin listeners get native-voice headlines without an in-house TTS team.",
     stat: "312k",
     statLabel: "weekly listens",
   },
   {
     org: "Newsroom SaaS",
-    quote: "We white-label synthesis + provenance for twelve stations. Metering and request_id tracing made finance audits trivial.",
+    quote: "White-label synthesis + provenance for 12 stations. Metering and request_id made audits straightforward.",
     stat: "99.6%",
     statLabel: "uptime (90d)",
   },
   {
     org: "Telco partner",
-    quote: "Briefing payloads land cached under 120ms. Edge-LOS routing keeps peak-hour latency predictable for USSD + IVR.",
+    quote: "Briefings cache <120ms; edge-LOS keeps USSD/IVR latency steady at peak.",
     stat: "P95",
-    statLabel: "< 3s synthesis",
+    statLabel: "<3s synthesis",
   },
 ];
 
@@ -34,9 +35,9 @@ export function LandingStories() {
     <section ref={ref} className="land-stories" aria-labelledby="land-stories-title">
       <div className="land-stories__head">
         <h2 className="land-stories__title" id="land-stories-title">
-          Customer stories
+          In production
         </h2>
-        <p className="land-stories__lede">How teams use Narvo Platform in production.</p>
+        <p className="land-stories__lede">What teams optimize for in pilots.</p>
       </div>
       <div className="land-stories__grid">
         {STORIES.map((s) => (

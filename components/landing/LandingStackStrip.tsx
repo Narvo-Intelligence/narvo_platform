@@ -1,10 +1,10 @@
-const STACKS = ["Next.js", "REST", "cURL", "Webhooks", "Edge CDN", "OpenAPI"];
+const STACKS = ["Next.js", "REST", "cURL", "Webhooks", "CDN", "OpenAPI"];
 
 export function LandingStackStrip() {
   return (
     <section className="land-strip" aria-label="Works with your stack">
       <div className="land-strip__inner">
-        <p className="land-strip__label">Ship with</p>
+        <p className="land-strip__label">Stack</p>
         <ul className="land-strip__list">
           {STACKS.map((s) => (
             <li key={s} className="land-strip__item">

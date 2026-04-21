@@ -13,18 +13,17 @@ export function LandingQuickstart() {
       <div className="land-qs__inner">
         <div className="land-qs__copy">
           <h2 className="land-qs__title" id="land-qs-title">
-            Start building in seconds
+            First call in minutes
           </h2>
           <p className="land-qs__lede">
-            Issue a sandbox key from the dashboard, paste your bearer token, and call <code>/v1/synthesis</code>. The
-            playground streams the same fixtures your production keys will hit — without wiring auth first.
+            Dashboard sandbox key, bearer header, then <code>/v1/synthesis</code>. Playground mirrors prod fixtures.
           </p>
           <div className="land-qs__links">
             <Link className="land-qs__link" href="/playground/">
-              Open playground <span aria-hidden="true">→</span>
+              Playground <span aria-hidden="true">→</span>
             </Link>
             <a className="land-qs__link land-qs__link--ghost" href={getDocsHomeUrl()}>
-              View all examples
+              More examples
             </a>
           </div>
         </div>

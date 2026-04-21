@@ -14,8 +14,7 @@ const REQUEST = `curl -X POST https://api.narvo.news/v1/synthesis \\
 
 const RESPONSE = {
   story_id: "a3f8c2e1-7b9d-4e2a-8f1c-6d5a2b1e9c8f",
-  narrative:
-    "The Federal Government don announce say fuel subsidy go return next month...",
+  narrative: "FG don announce say fuel subsidy go return next month...",
   key_takeaways: ["Fuel subsidy return scheduled for next month", "Target: low-income households across 36 states"],
   source_attribution: ["Punch NG", "Vanguard", "Channels TV"],
   language: "pcm",
@@ -47,12 +46,12 @@ export function LandingHero() {
         <div className="lh__stack">
           <p className="lh__announcer">
           <Link className="lh__announcer-link" href="/playground/">
-            Playground v1 beta
+            Playground (v1 beta)
           </Link>
           <span className="lh__announcer-sep" aria-hidden="true">
             ·
           </span>
-          <span>Try synthesis + TTS with a sandbox key</span>
+          <span>Sandbox key · synthesis + TTS</span>
           </p>
 
           <h1 className="lh__title" id="lh-title">
@@ -61,9 +60,8 @@ export function LandingHero() {
           </h1>
 
           <p className="lh__lede">
-          Narvo Platform is the broadcast intelligence API — narrative synthesis, culturally authentic TTS, provenance
-          scoring, translation, and briefings. Versioned under <code className="lh__code">/v1/</code>, bearer-auth&apos;d,
-          metered per tenant, with edge latency tuned for West Africa.
+            Broadcast intelligence API: synthesis, TTS, provenance, translate, briefings.{" "}
+            <code className="lh__code">/v1/</code>, bearer keys, per-tenant metering — edge tuned for West Africa.
           </p>
 
           <div className="lh__ctas">
@@ -75,7 +73,7 @@ export function LandingHero() {
           </a>
           </div>
 
-          <p className="lh__fineprint">1,000 free calls/month · sandbox + live keys · no card</p>
+          <p className="lh__fineprint">1k free calls/mo · sandbox &amp; live keys · no card</p>
 
           <ul className="lh__apis" aria-label="API products">
           {heroApis.map((a) => (

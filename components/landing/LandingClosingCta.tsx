@@ -11,7 +11,7 @@ export function LandingClosingCta() {
           <span className="land-close__muted">at platform scale</span>
         </h2>
         <p className="land-close__lede">
-          1,000 free calls / month · sandbox + live keys · no card. The Developer tier stays free while you integrate.
+          1k free calls/mo · sandbox &amp; live keys · no card. Developer tier stays free while you ship.
         </p>
         <div className="land-close__ctas">
           <Link className="btn btn--primary btn--lg" href="/signup/">
@@ -22,7 +22,7 @@ export function LandingClosingCta() {
           </a>
         </div>
         <p className="land-close__foot mono">
-          Powered by the Narvo Intelligence pipeline ·{" "}
+          Narvo Intelligence ·{" "}
           <a className="land-close__foot-link" href="https://narvo.news">
             narvo.news
           </a>

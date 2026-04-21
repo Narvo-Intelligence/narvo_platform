@@ -21,11 +21,9 @@ export function LandingProductPreview() {
     <section ref={ref} className="land-preview" aria-labelledby="land-preview-title">
       <div className="land-preview__head">
         <h2 className="land-preview__title" id="land-preview-title">
-          Stay productive without leaving the portal
+          Portal: playground, keys, usage
         </h2>
-        <p className="land-preview__lede">
-          Playground, keys, and quota previews share one shell — the same top bar and layout you use in production.
-        </p>
+        <p className="land-preview__lede">One shell — same chrome you ship with.</p>
       </div>
 
       <div className="land-preview__browser">

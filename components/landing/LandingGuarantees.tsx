@@ -49,25 +49,25 @@ const CELLS = [
   {
     Icon: IconShield,
     title: "Multi-tenancy",
-    body: "Every request is scoped to a tenant derived from the API key — never from client-supplied IDs alone.",
-    bullets: ["Per-tenant keys", "Quota isolation", "Audit-ready logs"],
+    body: "Tenant scope comes from the API key — not client-supplied IDs alone.",
+    bullets: ["Per-tenant keys", "Quota isolation", "Audit logs"],
   },
   {
     Icon: IconGauge,
     title: "Usage metering",
-    body: "Atomic logging ties tenant · endpoint · tokens to every 200 OK.",
-    bullets: ["Atomic write-path", "Per-language breakdown", "Exportable usage"],
+    body: "Each 200 OK logs tenant, endpoint, and tokens atomically.",
+    bullets: ["Atomic writes", "Per-language splits", "Exports"],
   },
   {
     Icon: IconBolt,
     title: "Rate limits",
-    body: "Sliding-window limits per tier. 429s carry predictable retry hints.",
-    bullets: ["Synthesis 10/min", "TTS 20/min", "Provenance 60/min"],
+    body: "Sliding windows per tier; 429s include retry guidance.",
+    bullets: ["Synth 10/min", "TTS 20/min", "Provenance 60/min"],
   },
   {
     Icon: IconLock,
     title: "SLA enforcement",
-    body: "Tier-mapped uptime targets with credits if a window slips.",
+    body: "Tier uptime targets; credits if a window misses.",
     bullets: ["Publisher 99.5%", "Newsroom 99.7%", "Enterprise 99.9%"],
   },
 ];
@@ -82,8 +82,8 @@ export function LandingGuarantees() {
     <section ref={ref} className="matrix" aria-label="Platform guarantees">
       <div className="matrix__inner">
         <header className="matrix__head">
-          <div className="matrix__eyebrow">Platform guarantees</div>
-          <h2 className="matrix__title">Everything a paying newsroom expects on day one.</h2>
+          <div className="matrix__eyebrow">Guarantees</div>
+          <h2 className="matrix__title">What paid newsrooms expect on day one.</h2>
         </header>
 
         <div className="matrix__grid">

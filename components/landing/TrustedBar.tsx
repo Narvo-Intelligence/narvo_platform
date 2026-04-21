@@ -1,12 +1,12 @@
 import { Fragment } from "react";
 
 const SEGMENTS = [
-  "Independent publishers",
-  "Newsrooms & radio",
-  "Telcos · MTN / Airtel",
-  "Corporate PR & Gov",
-  "Research & NGOs",
-  "Podcast platforms",
+  "Publishers",
+  "Newsrooms / radio",
+  "Telcos",
+  "PR / Gov",
+  "NGOs / research",
+  "Podcasts",
 ];
 
 export function TrustedBar() {
