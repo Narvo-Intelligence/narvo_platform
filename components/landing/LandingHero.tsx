@@ -43,8 +43,9 @@ export function LandingHero() {
 
   return (
     <section className="lh lh--supa" aria-labelledby="lh-title">
-      <div className="lh__stack">
-        <p className="lh__announcer">
+      <div className="lh__shell">
+        <div className="lh__stack">
+          <p className="lh__announcer">
           <Link className="lh__announcer-link" href="/playground/">
             Playground v1 beta
           </Link>
@@ -52,40 +53,40 @@ export function LandingHero() {
             ·
           </span>
           <span>Try synthesis + TTS with a sandbox key</span>
-        </p>
+          </p>
 
-        <h1 className="lh__title" id="lh-title">
+          <h1 className="lh__title" id="lh-title">
           <span className="lh__title-line">Ship audio news</span>
-          <span className="lh__title-line lh__title-line--grad">at platform scale</span>
-        </h1>
+          <span className="lh__title-line lh__title-line--muted">at platform scale</span>
+          </h1>
 
-        <p className="lh__lede">
+          <p className="lh__lede">
           Narvo Platform is the broadcast intelligence API — narrative synthesis, culturally authentic TTS, provenance
           scoring, translation, and briefings. Versioned under <code className="lh__code">/v1/</code>, bearer-auth&apos;d,
           metered per tenant, with edge latency tuned for West Africa.
-        </p>
+          </p>
 
-        <div className="lh__ctas">
+          <div className="lh__ctas">
           <Link className="btn btn--primary btn--lg" href="/signup/">
             Start your project <span aria-hidden="true">→</span>
           </Link>
           <a className="btn btn--ghost btn--lg" href={getDocsHomeUrl()}>
             Documentation
           </a>
-        </div>
+          </div>
 
-        <p className="lh__fineprint">1,000 free calls/month · sandbox + live keys · no card</p>
+          <p className="lh__fineprint">1,000 free calls/month · sandbox + live keys · no card</p>
 
-        <ul className="lh__apis" aria-label="API products">
+          <ul className="lh__apis" aria-label="API products">
           {heroApis.map((a) => (
             <ApiChip key={a.key} title={a.title} verb={a.verb} verbClass={a.verbClass} />
           ))}
-        </ul>
-      </div>
+          </ul>
+        </div>
 
-      <div className="lh__demo">
-        <div className="code-split code-split--hero">
-          <article className="code-panel code-panel--req">
+        <div className="lh__demo">
+          <div className="code-split code-split--hero">
+            <article className="code-panel code-panel--req">
             <header className="code-panel__head">
               <span className="verb verb--post">POST</span>
               <code className="code-panel__path">/v1/synthesis</code>
@@ -122,6 +123,7 @@ export function LandingHero() {
             </pre>
           </article>
         </div>
+      </div>
       </div>
     </section>
   );

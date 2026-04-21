@@ -142,7 +142,7 @@
   font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--signal);
+  color: var(--ash);
 }
 .land-story__quote {
   margin: 0 0 20px;
@@ -218,13 +218,13 @@
   font-family: var(--font-mono);
   font-size: 13px;
   font-weight: 600;
-  color: var(--emerald);
-  border-bottom: 1px solid transparent;
+  color: rgba(242, 242, 242, 0.78);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
 .land-qs__link:hover {
   color: var(--chalk);
-  border-color: var(--emerald);
+  border-color: rgba(255, 255, 255, 0.42);
 }
 .land-qs__link--ghost {
   color: var(--ash);
@@ -296,7 +296,7 @@
   color: var(--ash-dim);
 }
 .land-qs__code .acc {
-  color: var(--signal);
+  color: rgba(242, 242, 242, 0.88);
 }
 .land-qs__code .flg {
   color: var(--amber);
@@ -395,9 +395,9 @@
   color: var(--chalk);
 }
 .land-preview__tab.is-active {
-  color: var(--signal);
-  border-bottom-color: var(--signal);
-  background: rgba(242, 92, 5, 0.06);
+  color: var(--chalk);
+  border-bottom-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.04);
 }
 .land-preview__body {
   padding: 24px 20px 28px;
@@ -474,7 +474,7 @@
 .land-preview__bars span {
   flex: 1;
   border-radius: 4px 4px 0 0;
-  background: linear-gradient(180deg, var(--signal), rgba(242, 92, 5, 0.35));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.06));
   min-height: 12px;
 }
 
@@ -503,7 +503,7 @@
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--signal);
+  color: var(--ash);
 }
 .land-stats__grid {
   display: grid;
@@ -540,16 +540,7 @@
   position: relative;
   padding: clamp(72px, 12vh, 120px) 0 clamp(64px, 10vh, 100px);
   overflow: hidden;
-}
-.land-close__bg {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-.land-close__glow {
-  position: absolute;
-  inset: 20% 10% -40% 10%;
-  background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(242, 92, 5, 0.14), transparent 65%);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 .land-close__inner {
   position: relative;
@@ -565,12 +556,11 @@
   letter-spacing: -0.035em;
   line-height: 1.05;
   margin: 0 0 18px;
+  color: var(--chalk);
 }
-.land-close__grad {
-  background: linear-gradient(120deg, var(--signal) 0%, #ffb870 50%, var(--chalk) 95%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.land-close__muted {
+  color: rgba(242, 242, 242, 0.72);
+  font-weight: 700;
 }
 .land-close__lede {
   margin: 0 0 28px;
@@ -591,10 +581,10 @@
   color: var(--ash);
 }
 .land-close__foot-link {
-  color: var(--signal);
-  border-bottom: 1px solid rgba(242, 92, 5, 0.35);
+  color: rgba(242, 242, 242, 0.82);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .land-close__foot-link:hover {
   color: var(--chalk);
-  border-color: var(--signal);
+  border-color: rgba(255, 255, 255, 0.45);
 }

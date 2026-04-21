@@ -1,25 +1,19 @@
-/* Landing hero — Supabase-style centered fold + Narvo tokens (Signal, Void, emerald) */
+/* Landing hero — centered column, flat surfaces, Signal reserved for primary CTA */
 
 .lh--supa {
   position: relative;
-  padding: clamp(48px, 9vh, 100px) 0 clamp(40px, 6vh, 72px);
+  padding: clamp(40px, 7vh, 88px) 0 clamp(32px, 5vh, 56px);
 }
 
-.lh--supa::before {
-  content: "";
-  position: absolute;
-  inset: -5% 20% 70% 20%;
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(242, 92, 5, 0.12), transparent 70%);
-  pointer-events: none;
-  z-index: 0;
+.lh__shell {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
 }
 
 .lh__stack {
-  position: relative;
-  z-index: 1;
-  max-width: 920px;
+  max-width: 40rem;
   margin: 0 auto;
-  padding: 0 var(--gutter);
   text-align: center;
 }
 
@@ -32,18 +26,18 @@
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--ash);
-  margin: 0 0 28px;
+  margin: 0 0 24px;
   letter-spacing: 0.02em;
 }
 
 .lh__announcer-link {
-  color: var(--signal);
-  border-bottom: 1px solid rgba(242, 92, 5, 0.4);
+  color: rgba(242, 242, 242, 0.78);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
 .lh__announcer-link:hover {
   color: var(--chalk);
-  border-color: var(--signal);
+  border-color: rgba(255, 255, 255, 0.45);
 }
 
 .lh__announcer-sep {
@@ -52,29 +46,28 @@
 
 .lh__title {
   font-weight: 800;
-  font-size: clamp(42px, 6.5vw, 84px);
+  font-size: clamp(40px, 6vw, 80px);
   letter-spacing: -0.04em;
-  line-height: 1.02;
-  margin: 0 0 24px;
+  line-height: 1.03;
+  margin: 0 0 22px;
+  color: var(--chalk);
 }
 
 .lh__title-line {
   display: block;
 }
 
-.lh__title-line--grad {
-  background: linear-gradient(120deg, var(--signal) 0%, #ffb870 42%, var(--chalk) 88%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.lh__title-line--muted {
+  color: rgba(242, 242, 242, 0.72);
+  font-weight: 700;
 }
 
 .lh__lede {
-  font-size: clamp(16px, 1.25vw, 19px);
-  line-height: 1.6;
-  color: rgba(242, 242, 242, 0.72);
-  max-width: 38rem;
-  margin: 0 auto 28px;
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.62;
+  color: rgba(242, 242, 242, 0.62);
+  max-width: 36rem;
+  margin: 0 auto 26px;
 }
 
 .lh__code {
@@ -93,11 +86,11 @@
   gap: 12px;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .lh__fineprint {
-  margin: 0 0 32px;
+  margin: 0 0 28px;
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--ash);
@@ -110,20 +103,20 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px 14px;
+  gap: 8px 10px;
 }
 
 .lh-api-chip {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 14px;
+  padding: 7px 12px;
   border-radius: var(--r-pill);
   border: 1px solid var(--slate);
-  background: rgba(17, 17, 17, 0.55);
-  font-size: 13px;
+  background: rgba(17, 17, 17, 0.65);
+  font-size: 12px;
   font-weight: 500;
-  color: var(--chalk);
+  color: rgba(242, 242, 242, 0.82);
   letter-spacing: -0.01em;
 }
 
@@ -142,11 +135,8 @@
 }
 
 .lh__demo {
-  position: relative;
-  z-index: 1;
-  max-width: min(1120px, 100%);
-  margin: clamp(40px, 6vh, 64px) auto 0;
-  padding: 0 var(--gutter);
+  margin: clamp(32px, 5vh, 52px) auto 0;
+  max-width: 100%;
 }
 
 .code-split--hero {
@@ -155,12 +145,9 @@
   gap: 12px;
   align-items: stretch;
   border: 1px solid var(--slate);
-  border-radius: var(--r-xl);
-  background: linear-gradient(180deg, var(--graphite) 0%, #0d0d0d 100%);
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.02),
-    0 48px 100px rgba(0, 0, 0, 0.55),
-    0 0 100px rgba(242, 92, 5, 0.07);
+  border-radius: var(--r-lg);
+  background: var(--graphite);
+  box-shadow: none;
   overflow: hidden;
 }
 
@@ -171,7 +158,7 @@
   background: transparent;
 }
 .code-split--hero .code-panel--res {
-  background: rgba(16, 185, 129, 0.018);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .code-split--hero .code-panel__head {
@@ -212,8 +199,8 @@
   color: var(--chalk);
   overflow-x: auto;
   white-space: pre;
-  min-height: 240px;
-  max-height: 380px;
+  min-height: 220px;
+  max-height: 360px;
 }
 .code-split--hero .code-panel__body code {
   font-family: inherit;
@@ -231,7 +218,7 @@
   color: var(--ash-dim);
 }
 .code-split--hero .code-panel__body .acc {
-  color: var(--signal);
+  color: rgba(242, 242, 242, 0.88);
 }
 .code-split--hero .code-panel__body .flg {
   color: var(--amber);
@@ -244,9 +231,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--signal);
+  color: rgba(242, 242, 242, 0.35);
   padding: 0 4px;
-  opacity: 0.75;
   min-width: 48px;
 }
 .code-split--hero .code-split__bridge svg {
@@ -267,12 +253,12 @@
 
 @media (max-width: 780px) {
   .lh__title {
-    font-size: clamp(36px, 10vw, 56px);
+    font-size: clamp(34px, 9vw, 54px);
   }
   .code-split--hero .code-panel__body {
     padding: 14px;
     font-size: 11.5px;
     min-height: 200px;
-    max-height: 320px;
+    max-height: 300px;
   }
 }
