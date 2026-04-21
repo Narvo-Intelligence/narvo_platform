@@ -20,6 +20,8 @@ Open [http://localhost:3000](http://localhost:3000).
 
 **Phase C — auth:** set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` in `.env.local` (see `.env.example`). Sign-in/up use the browser client; static export means no Next middleware — session is client-side until hosting changes.
 
+**Phase C — playground:** set `NEXT_PUBLIC_API_BASE_URL` (e.g. `https://api.narvo.news`) and paste an `nrv_sk_*` key in the playground to run real POSTs. Otherwise responses stay simulated. The API must send CORS headers for your portal origin.
+
 ## Scripts
 
 | Command | Description |

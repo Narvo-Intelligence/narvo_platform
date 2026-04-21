@@ -10,12 +10,23 @@ export type PlaygroundFixture = {
   response: Record<string, unknown>;
   audio: { voice: string; dur: string } | null;
   provenance: boolean;
+  /** Live `fetch` when bearer + `NEXT_PUBLIC_API_BASE_URL` are set. */
+  api: { method: "POST"; path: string; body: Record<string, unknown> };
 };
 
 export type PlaygroundEndpointKey = "synthesis" | "tts" | "provenance" | "translate";
 
 export const PLAYGROUND_FIXTURES: Record<PlaygroundEndpointKey, PlaygroundFixture> = {
   synthesis: {
+    api: {
+      method: "POST",
+      path: "/v1/synthesis",
+      body: {
+        url: "https://punchng.com/fg-fuel-subsidy",
+        language: "pcm",
+        include_audio: true,
+      },
+    },
     latency: [1800, 2900],
     request: [
       { c: "$ ", d: 40 },
@@ -60,6 +71,16 @@ export const PLAYGROUND_FIXTURES: Record<PlaygroundEndpointKey, PlaygroundFixtur
   },
 
   tts: {
+    api: {
+      method: "POST",
+      path: "/v1/tts/generate",
+      body: {
+        text: "Good morning. Here are the headlines for Lagos today.",
+        language: "en",
+        voice: "emma",
+        format: "mp3",
+      },
+    },
     latency: [600, 1200],
     request: [
       { c: "$ ", d: 40 },
@@ -92,6 +113,13 @@ export const PLAYGROUND_FIXTURES: Record<PlaygroundEndpointKey, PlaygroundFixtur
   },
 
   provenance: {
+    api: {
+      method: "POST",
+      path: "/v1/provenance/analyze",
+      body: {
+        text: "CBN raises benchmark interest rate to 27.5%",
+      },
+    },
     latency: [400, 800],
     request: [
       { c: "$ ", d: 40 },
@@ -126,6 +154,15 @@ export const PLAYGROUND_FIXTURES: Record<PlaygroundEndpointKey, PlaygroundFixtur
   },
 
   translate: {
+    api: {
+      method: "POST",
+      path: "/v1/translate/narrate",
+      body: {
+        text: "The new policy takes effect on Friday.",
+        target_language: "yo",
+        include_audio: true,
+      },
+    },
     latency: [800, 1400],
     request: [
       { c: "$ ", d: 40 },

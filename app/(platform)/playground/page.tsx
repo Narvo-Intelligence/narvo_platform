@@ -16,8 +16,11 @@ export default function PlaygroundPage() {
           <div className="page-eyebrow">Playground · v1 beta</div>
           <h1 className="playground__title">Fire real endpoints.</h1>
           <p className="playground__lede">
-            Pre-loaded with your sandbox key. Pick an endpoint, tweak the payload, watch the response stream back in real
-            edge-region latency.
+            Without an API key, responses are simulated. Paste an{" "}
+            <code style={{ fontFamily: "var(--font-mono)", color: "var(--emerald)" }}>nrv_sk_</code> key and set{" "}
+            <code style={{ fontFamily: "var(--font-mono)", color: "var(--emerald)" }}>NEXT_PUBLIC_API_BASE_URL</code> to
+            call the real POST endpoints from the browser
+            (requires CORS on the API).
           </p>
         </div>
         <div className="playground__hints" aria-label="Keyboard shortcuts">
