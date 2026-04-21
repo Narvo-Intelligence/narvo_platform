@@ -9,9 +9,20 @@ const SEGMENTS = [
   "Podcasts",
 ];
 
-export function TrustedBar() {
+type TrustedBarProps = {
+  /** When true, render as a div (nested in a parent section) and use compact chrome. */
+  embedded?: boolean;
+};
+
+export function TrustedBar({ embedded }: TrustedBarProps) {
+  const Tag = embedded ? "div" : "section";
+
   return (
-    <section className="trusted-bar" aria-label="Built for">
+    <Tag
+      className={`trusted-bar${embedded ? " trusted-bar--embedded" : ""}`}
+      aria-label="Built for"
+      role={embedded ? "group" : undefined}
+    >
       <div className="trusted-bar__inner">
         <span className="trusted-bar__label">Built for</span>
         <ul className="trusted-bar__list">
@@ -27,6 +38,6 @@ export function TrustedBar() {
           ))}
         </ul>
       </div>
-    </section>
+    </Tag>
   );
 }

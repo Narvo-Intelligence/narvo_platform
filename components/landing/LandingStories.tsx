@@ -5,21 +5,23 @@ import { observeRevealAll } from "@/lib/observers/reveal";
 
 const STORIES = [
   {
-    org: "Publisher network",
+    org: "Global publisher",
     quote:
-      "~80% lower audio production cost; Pidgin listeners get native-voice headlines without an in-house TTS team.",
-    stat: "312k",
-    statLabel: "weekly listens",
+      "Cut audio packaging time from days to hours: one contract, one meter, and request_id on every response for downstream QA.",
+    stat: "4×",
+    statLabel: "faster to air",
   },
   {
-    org: "Newsroom SaaS",
-    quote: "White-label synthesis + provenance for 12 stations. Metering and request_id made audits straightforward.",
+    org: "Broadcast SaaS",
+    quote:
+      "We white-label synthesis + provenance for partner stations. Tenant-scoped keys and usage exports made finance reviews painless.",
     stat: "99.6%",
     statLabel: "uptime (90d)",
   },
   {
-    org: "Telco partner",
-    quote: "Briefings cache <120ms; edge-LOS keeps USSD/IVR latency steady at peak.",
+    org: "Telco media unit",
+    quote:
+      "Cached briefings for IVR and USSD menus; P95 synthesis stayed inside our SLA window under peak traffic.",
     stat: "P95",
     statLabel: "<3s synthesis",
   },
@@ -32,12 +34,12 @@ export function LandingStories() {
   }, []);
 
   return (
-    <section ref={ref} className="land-stories" aria-labelledby="land-stories-title">
+    <section ref={ref} className="land-stories land-stories--motion" aria-labelledby="land-stories-title">
       <div className="land-stories__head">
         <h2 className="land-stories__title" id="land-stories-title">
-          In production
+          Built for production
         </h2>
-        <p className="land-stories__lede">What teams optimize for in pilots.</p>
+        <p className="land-stories__lede">What operators ship first when they wire Narvo in.</p>
       </div>
       <div className="land-stories__grid">
         {STORIES.map((s) => (

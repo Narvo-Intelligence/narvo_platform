@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
 import { getDocsFragmentUrl, getDocsHomeUrl } from "@/lib/docs";
 
 function LogoSvg() {
@@ -14,84 +13,46 @@ function LogoSvg() {
 }
 
 export function PlatformFooter() {
-  const regionRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const reduceMotion =
-      window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) return;
-    const el = regionRef.current;
-    if (!el) return;
-    const regions = [
-      "eu-west-1 · edge-LOS",
-      "eu-west-1 · edge-ABV",
-      "eu-west-1 · edge-FRA",
-      "eu-west-1 · edge-LHR",
-    ];
-    let i = 0;
-    const id = window.setInterval(() => {
-      i = (i + 1) % regions.length;
-      el.textContent = regions[i];
-    }, 5200);
-    return () => window.clearInterval(id);
-  }, []);
-
   return (
-    <div className="footer">
-      <div className="footer__inner">
-        <div className="footer__brand">
-          <span className="nav__logo">
-            <LogoSvg />
+    <footer className="footer">
+      <div className="footer__inner footer__inner--compact">
+        <div className="footer__top">
+          <Link href="/" className="footer__brand-mark" aria-label="Narvo Platform home">
+            <span className="nav__logo footer__logo">
+              <LogoSvg />
+            </span>
+            <span className="footer__wordmark">Narvo</span>
+          </Link>
+          <p className="footer__tag">Audio intelligence APIs — synthesis, voice, provenance, briefings.</p>
+        </div>
+
+        <nav className="footer__links" aria-label="Footer">
+          <Link href="/#engines">Engines</Link>
+          <Link href="/playground/">Playground</Link>
+          <Link href="/pricing/">Pricing</Link>
+          <Link href="/status/">Status</Link>
+          <span className="footer__sep" aria-hidden="true">
+            ·
           </span>
-          <div>
-            <div className="footer__wordmark">Narvo / platform</div>
-            <div className="footer__line">The intelligence layer for African media.</div>
-          </div>
-        </div>
-
-        <div className="footer__cols">
-          <div>
-            <div className="footer__head">Product</div>
-            <Link href="/#engines">Engines</Link>
-            <Link href="/playground/">Playground</Link>
-            <Link href="/pricing/">Pricing</Link>
-            <Link href="/status/">Status</Link>
-          </div>
-          <div>
-            <div className="footer__head">Developers</div>
-            <a href={getDocsHomeUrl()}>Docs</a>
-            <a href={getDocsFragmentUrl("quickstart")}>Quick start</a>
-            <a href={getDocsFragmentUrl("sdks")}>SDKs</a>
-            <a href={getDocsFragmentUrl("changelog")}>Changelog</a>
-          </div>
-          <div>
-            <div className="footer__head">Company</div>
-            <a href="#about">About Narvo</a>
-            <a href="https://narvo.news">Consumer app</a>
-            <a href="#press">Press</a>
-            <a href="#contact">Contact</a>
-          </div>
-          <div>
-            <div className="footer__head">Legal</div>
-            <a href="#terms">API terms</a>
-            <a href="#privacy">Privacy (NDPA)</a>
-            <a href="#security">Security</a>
-            <a href="#sla">SLA</a>
-          </div>
-        </div>
-
-        <div className="footer__status">
-          <span className="dot dot--ok" />
-          <span>All systems operational · uptime 99.87% (30d)</span>
-        </div>
-
-        <div className="footer__bottom">
-          <span>© 2026 Narvo Intelligence Ltd. Lagos · Abuja · remote.</span>
-          <span className="mono footer__req">
-            region=<span ref={regionRef}>eu-west-1 · edge-LOS</span> · build=platform.narvo.news@v1.0.0
+          <a href={getDocsHomeUrl()}>Docs</a>
+          <a href={getDocsFragmentUrl("quickstart")}>Quick start</a>
+          <a href={getDocsFragmentUrl("sdks")}>SDKs</a>
+          <span className="footer__sep" aria-hidden="true">
+            ·
           </span>
+          <a href="https://narvo.news">narvo.news</a>
+          <a href="#contact">Contact</a>
+          <a href="#terms">Terms</a>
+          <a href="#privacy">Privacy</a>
+        </nav>
+
+        <div className="footer__bottom footer__bottom--compact">
+          <span className="footer__status-mini">
+            <span className="dot dot--ok" aria-hidden="true" /> Operational
+          </span>
+          <span>© 2026 Narvo Intelligence Ltd.</span>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

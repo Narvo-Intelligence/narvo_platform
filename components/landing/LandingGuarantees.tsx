@@ -86,7 +86,7 @@ export function LandingGuarantees() {
           <h2 className="matrix__title">What paid newsrooms expect on day one.</h2>
         </header>
 
-        <div className="matrix__grid">
+        <div className="matrix__grid matrix__grid--masonry">
           {CELLS.map((c) => {
             const Icon = c.Icon;
             return (

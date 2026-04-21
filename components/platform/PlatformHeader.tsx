@@ -2,8 +2,24 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { getDocsFragmentUrl } from "@/lib/docs";
+
+const API_LINKS = [
+  { label: "Synthesis", href: getDocsFragmentUrl("synthesis") },
+  { label: "Translation", href: getDocsFragmentUrl("translate") },
+  { label: "Broadcast TTS", href: getDocsFragmentUrl("tts") },
+  { label: "Provenance Tag", href: getDocsFragmentUrl("provenance") },
+  { label: "Morning Briefing", href: getDocsFragmentUrl("briefing") },
+] as const;
+
+const MAIN_LINKS = [
+  { href: "/docs/", label: "Docs", match: "/docs" },
+  { href: "/playground/", label: "Playground", match: "/playground" },
+  { href: "/pricing/", label: "Pricing", match: "/pricing" },
+  { href: "/status/", label: "Status", match: "/status" },
+] as const;
 
 function NavItem({ href, active, children }: { href: string; active: boolean; children: React.ReactNode }) {
   return (
@@ -16,12 +32,25 @@ function NavItem({ href, active, children }: { href: string; active: boolean; ch
 export function PlatformHeader() {
   const pathname = usePathname() || "/";
   const cur = pathname.replace(/\/+$/, "") || "/";
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [apiOpen, setApiOpen] = useState(false);
+  const apiRef = useRef<HTMLDivElement>(null);
 
   const is = (prefix: string) => {
     const p = prefix.replace(/\/+$/, "") || "/";
-    if (p === "/") return cur === "/";
     return cur === p || cur.startsWith(`${p}/`);
   };
+
+  useEffect(() => {
+    if (!apiOpen) return;
+    const close = (e: MouseEvent) => {
+      if (apiRef.current && !apiRef.current.contains(e.target as Node)) setApiOpen(false);
+    };
+    document.addEventListener("mousedown", close);
+    return () => document.removeEventListener("mousedown", close);
+  }, [apiOpen]);
+
+  const closeDrawer = () => setDrawerOpen(false);
 
   return (
     <header className="platform-header">
@@ -37,40 +66,45 @@ export function PlatformHeader() {
           <span className="platform-header__name">Narvo</span>
         </Link>
 
-        <nav className="platform-header__nav" aria-label="Primary">
-          <NavItem href="/" active={cur === "/"}>
-            Overview
-          </NavItem>
-          <NavItem href="/docs/" active={is("/docs")}>
-            Docs
-          </NavItem>
+        <nav className="platform-header__nav platform-header__nav--desktop" aria-label="Primary">
+          {MAIN_LINKS.map((l) => (
+            <NavItem key={l.href} href={l.href} active={is(l.match)}>
+              {l.label}
+            </NavItem>
+          ))}
 
-          <details className="platform-header__details">
-            <summary className="platform-header__summary">
+          <div className="platform-header__api-wrap" ref={apiRef}>
+            <button
+              type="button"
+              className="platform-header__summary"
+              aria-expanded={apiOpen}
+              aria-haspopup="true"
+              onClick={() => setApiOpen((o) => !o)}
+            >
               API
-              <ChevronDown className="platform-header__chev" aria-hidden size={14} strokeWidth={2} />
-            </summary>
-            <div className="platform-header__dropdown">
-              <a href={getDocsFragmentUrl("synthesis")}>Synthesis</a>
-              <a href={getDocsFragmentUrl("translate")}>Translation</a>
-              <a href={getDocsFragmentUrl("tts")}>Broadcast TTS</a>
-              <a href={getDocsFragmentUrl("provenance")}>Provenance Tag</a>
-              <a href={getDocsFragmentUrl("briefing")}>Morning Briefing</a>
-            </div>
-          </details>
-
-          <NavItem href="/playground/" active={is("/playground")}>
-            Playground
-          </NavItem>
-          <NavItem href="/pricing/" active={is("/pricing")}>
-            Pricing
-          </NavItem>
-          <NavItem href="/dashboard/" active={is("/dashboard")}>
-            Dashboard
-          </NavItem>
-          <NavItem href="/status/" active={is("/status")}>
-            Status
-          </NavItem>
+              <ChevronDown
+                className={`platform-header__chev${apiOpen ? " platform-header__chev--open" : ""}`}
+                aria-hidden
+                size={14}
+                strokeWidth={2}
+              />
+            </button>
+            {apiOpen ? (
+              <div className="platform-header__dropdown" role="menu">
+                {API_LINKS.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="platform-header__dropdown-link"
+                    role="menuitem"
+                    onClick={() => setApiOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            ) : null}
+          </div>
         </nav>
 
         <div className="platform-header__actions">
@@ -81,7 +115,48 @@ export function PlatformHeader() {
             Get API key
           </Link>
         </div>
+
+        <button
+          type="button"
+          className="platform-header__menu-btn"
+          aria-expanded={drawerOpen}
+          aria-controls="platform-nav-drawer"
+          onClick={() => setDrawerOpen((o) => !o)}
+        >
+          {drawerOpen ? <X size={22} strokeWidth={2} aria-hidden /> : <Menu size={22} strokeWidth={2} aria-hidden />}
+          <span className="sr-only">{drawerOpen ? "Close menu" : "Open menu"}</span>
+        </button>
       </div>
+
+      {drawerOpen ? (
+        <>
+          <button type="button" className="platform-header__backdrop" aria-label="Close menu" onClick={closeDrawer} />
+          <div id="platform-nav-drawer" className="platform-header__drawer" role="dialog" aria-modal="true">
+            <div className="platform-header__drawer-inner">
+              <p className="platform-header__drawer-label">Navigate</p>
+              {MAIN_LINKS.map((l) => (
+                <Link key={l.href} href={l.href} className="platform-header__drawer-link" onClick={closeDrawer}>
+                  {l.label}
+                </Link>
+              ))}
+              <p className="platform-header__drawer-label">API</p>
+              {API_LINKS.map((item) => (
+                <a key={item.href} href={item.href} className="platform-header__drawer-link" onClick={closeDrawer}>
+                  {item.label}
+                </a>
+              ))}
+              <div className="platform-header__drawer-actions">
+                <Link href="/login/" className="platform-header__drawer-ghost" onClick={closeDrawer}>
+                  Sign in
+                </Link>
+                <Link href="/signup/" className="platform-header__drawer-cta" onClick={closeDrawer}>
+                  Get API key
+                </Link>
+              </div>
+            </div>
+          </div>
+        </>
+      ) : null}
     </header>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { getDocsHomeUrl } from "@/lib/docs";
 import { highlightCurl } from "@/lib/syntax";
@@ -9,14 +11,15 @@ const SNIPPET = `curl -sS -X POST https://api.narvo.news/v1/synthesis \\
 
 export function LandingQuickstart() {
   return (
-    <section className="land-qs" aria-labelledby="land-qs-title">
+    <section className="land-qs land-qs--motion" aria-labelledby="land-qs-title">
       <div className="land-qs__inner">
         <div className="land-qs__copy">
           <h2 className="land-qs__title" id="land-qs-title">
             First call in minutes
           </h2>
           <p className="land-qs__lede">
-            Dashboard sandbox key, bearer header, then <code>/v1/synthesis</code>. Playground mirrors prod fixtures.
+            Create a sandbox key in the dashboard, send a bearer header, then call <code>/v1/synthesis</code>. The
+            playground mirrors production fixtures.
           </p>
           <div className="land-qs__links">
             <Link className="land-qs__link" href="/playground/">

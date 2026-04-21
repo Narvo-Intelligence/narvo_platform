@@ -5,6 +5,14 @@
   background: rgba(0, 0, 0, 0.28);
   margin-top: clamp(var(--space-3), 4vh, var(--space-6));
 }
+
+.trusted-bar--embedded {
+  margin-top: 0;
+  border: var(--hairline) solid var(--slate);
+  border-radius: var(--r-lg);
+  padding: var(--space-3);
+  background: rgba(0, 0, 0, 0.35);
+}
 .trusted-bar__inner {
   max-width: var(--content-max);
   margin: 0 auto;
