@@ -147,7 +147,7 @@
   border: 1px solid var(--slate);
   border-radius: var(--r-lg);
   background: var(--graphite);
-  box-shadow: none;
+  box-shadow: var(--shadow-none);
   overflow: hidden;
 }
 

@@ -81,9 +81,9 @@
   transform: rotate(-45deg);
 }
 .price--featured {
-  border-color: rgba(242,92,5,0.4);
-  background: linear-gradient(180deg, rgba(242,92,5,0.06), var(--graphite) 70%);
-  box-shadow: 0 0 0 1px rgba(242,92,5,0.15), 0 30px 60px rgba(242,92,5,0.08);
+  border-color: rgba(242, 92, 5, 0.45);
+  background: linear-gradient(180deg, rgba(242, 92, 5, 0.06), var(--graphite) 70%);
+  box-shadow: var(--shadow-none);
 }
 
 .price-overage {

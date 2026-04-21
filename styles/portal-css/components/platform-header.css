@@ -141,10 +141,10 @@
   min-width: 200px;
   padding: 8px;
   border-radius: var(--r-md);
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--border-structural);
   background: rgba(14, 14, 14, 0.98);
   backdrop-filter: blur(12px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+  box-shadow: var(--shadow-none);
   display: flex;
   flex-direction: column;
   gap: 2px;

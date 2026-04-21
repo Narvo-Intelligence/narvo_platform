@@ -43,3 +43,7 @@ Build output is static (`next.config.ts`: `output: "export"`). Deploy `out/` to 
 Remote: `https://github.com/Narvo-Intelligence/narvo_platform`
 
 Execution checklist: [`documentations/current/product/execution/Narvo_Platform_B2B_Execution.md`](../documentations/current/product/execution/Narvo_Platform_B2B_Execution.md) (monorepo path from workspace root).
+
+## Design system
+
+Canonical **Swiss Grid** + structural tokens (8px module, flat surfaces, zero radius; **Narvo Signal / Void** colours retained): [`documentations/current/design/Narvo_Platform_Design_System.md`](../documentations/current/design/Narvo_Platform_Design_System.md). CSS: `styles/portal-css/tokens.css`.

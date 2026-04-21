@@ -235,11 +235,11 @@
 }
 
 .land-qs__terminal {
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--border-structural);
   border-radius: var(--r-lg);
   background: linear-gradient(180deg, #121212, var(--void));
   overflow: hidden;
-  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.45);
+  box-shadow: var(--shadow-none);
 }
 .land-qs__chrome {
   display: flex;
@@ -334,11 +334,11 @@
   max-width: min(960px, 100%);
   margin: 0 auto;
   padding: 0 var(--gutter);
-  border: 1px solid var(--slate);
+  border: var(--hairline) solid var(--border-structural);
   border-radius: var(--r-xl);
   background: var(--graphite);
   overflow: hidden;
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-none);
 }
 .land-preview__bar {
   display: flex;

@@ -28,14 +28,17 @@
 }
 .dot--ok {
   background: var(--emerald);
-  box-shadow: 0 0 0 0 rgba(16,185,129,0.6);
   animation: pulse-ok 2s var(--ease) infinite;
 }
 .dot--idle { background: var(--ash-dim); }
 .dot--err { background: var(--fault); }
 
 @keyframes pulse-ok {
-  0%   { box-shadow: 0 0 0 0 rgba(16,185,129,0.55); }
-  70%  { box-shadow: 0 0 0 8px rgba(16,185,129,0); }
-  100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
 }

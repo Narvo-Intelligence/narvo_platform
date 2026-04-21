@@ -63,16 +63,11 @@
   flex-direction: column;
   min-height: 0;
   overflow: hidden;
-  transition:
-    border-color var(--dur) var(--ease),
-    transform var(--dur) var(--ease),
-    box-shadow var(--dur) var(--ease);
+  transition: border-color var(--dur) var(--ease);
 }
 
 .bento-card:hover {
-  border-color: #3a3a3a;
-  transform: translateY(-2px);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+  border-color: var(--border-structural);
 }
 
 .bento-card--dim {

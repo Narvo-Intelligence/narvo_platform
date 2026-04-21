@@ -18,16 +18,15 @@
   border-radius: var(--r-lg);
   background: var(--graphite);
   min-width: 0;
-  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  transition: border-color var(--dur) var(--ease);
 }
 .arch__node:hover {
-  transform: translateY(-2px);
-  border-color: rgba(242,92,5,0.4);
+  border-color: rgba(242, 92, 5, 0.4);
 }
 .arch__node--core {
-  border-color: rgba(242,92,5,0.35);
-  background: linear-gradient(180deg, var(--graphite), rgba(242,92,5,0.05));
-  box-shadow: 0 0 0 1px rgba(242,92,5,0.15), 0 20px 50px rgba(242,92,5,0.08);
+  border-color: rgba(242, 92, 5, 0.35);
+  background: linear-gradient(180deg, var(--graphite), rgba(242, 92, 5, 0.05));
+  box-shadow: var(--shadow-none);
 }
 
 .arch__tag {

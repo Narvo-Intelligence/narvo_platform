@@ -60,6 +60,15 @@
   --dur: 150ms;
   --dur-slow: 280ms;
 
+  /* Swiss structure (structural doctrine — Narvo brand hues unchanged; not PRD “gold”) */
+  --hairline: 1px;
+  /* PRD-aligned hairline grid / dense tables; use where extra legibility vs --slate is needed */
+  --border-structural: #333333;
+  /* Alternating band / row tint (PRD surface-alt analogue on Void canvas) */
+  --surface-band: #141414;
+  /* Flat surfaces — no elevation shadows (depth via borders + layout only) */
+  --shadow-none: none;
+
   /* Layout — gutters on the 8px grid; max width = 12 cols × 8 × 13.333… → 1280 */
   --gutter: clamp(var(--grid-gutter), 4vw, var(--space-8));
   --content-max: calc(var(--grid-unit) * 160);
