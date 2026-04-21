@@ -11,7 +11,7 @@
 @import url("./layouts/auth.css");
 
 @import url("./components/bg.css");
-@import url("./components/sidebar.css");
+@import url("./components/platform-header.css");
 @import url("./components/footer.css");
 @import url("./components/button.css");
 @import url("./components/pill.css");

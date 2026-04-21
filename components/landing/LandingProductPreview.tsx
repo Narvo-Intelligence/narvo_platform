@@ -24,7 +24,7 @@ export function LandingProductPreview() {
           Stay productive without leaving the portal
         </h2>
         <p className="land-preview__lede">
-          Playground, keys, and quota previews share one shell — the same sidebar you use in production.
+          Playground, keys, and quota previews share one shell — the same top bar and layout you use in production.
         </p>
       </div>
 
