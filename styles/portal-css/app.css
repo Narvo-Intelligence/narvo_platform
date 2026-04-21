@@ -25,20 +25,13 @@
 @import url("./components/trusted.css");
 @import url("./components/cta.css");
 
-/* Landing v2 (Inertia-concept) components */
+/* Landing — Supabase-style structure, Narvo tokens */
 @import url("./components/landing-hero.css");
+@import url("./components/landing-bento.css");
+@import url("./components/landing-sections.css");
 @import url("./components/trusted-bar.css");
-@import url("./components/elevate.css");
-@import url("./components/feature-triplet.css");
-@import url("./components/use-case-split.css");
-@import url("./components/score-rings.css");
 @import url("./components/feature-matrix.css");
-@import url("./components/testimonial.css");
-@import url("./components/start-banner.css");
-@import url("./components/brand-reveal.css");
-@import url("./components/engines-catalog.css");
 
-@import url("./pages/landing.css");
 @import url("./pages/pricing.css");
 @import url("./pages/playground.css");
 @import url("./pages/dashboard.css");

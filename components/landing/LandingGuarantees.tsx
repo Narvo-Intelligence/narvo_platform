@@ -49,30 +49,30 @@ const CELLS = [
   {
     Icon: IconShield,
     title: "Multi-tenancy",
-    body: "Every request is scoped to a tenant derived from the API key — never from JWT.",
-    bullets: ["Per-tenant keys", "Quota isolation", "Tenant-scoped billing log"],
+    body: "Every request is scoped to a tenant derived from the API key — never from client-supplied IDs alone.",
+    bullets: ["Per-tenant keys", "Quota isolation", "Audit-ready logs"],
   },
   {
     Icon: IconGauge,
     title: "Usage metering",
-    body: "Atomic logging ties `tenant_id · endpoint · tokens_consumed` to every 200 OK.",
-    bullets: ["Atomic write-path", "Per-language breakdown", "Audit-ready trail"],
+    body: "Atomic logging ties tenant · endpoint · tokens to every 200 OK.",
+    bullets: ["Atomic write-path", "Per-language breakdown", "Exportable usage"],
   },
   {
     Icon: IconBolt,
     title: "Rate limits",
-    body: "Upstash Redis sliding-window limits per tier. 429s carry `X-RateLimit-*` headers.",
+    body: "Sliding-window limits per tier. 429s carry predictable retry hints.",
     bullets: ["Synthesis 10/min", "TTS 20/min", "Provenance 60/min"],
   },
   {
     Icon: IconLock,
     title: "SLA enforcement",
-    body: "Tier-mapped uptime (99.5% → 99.9%), with auto-credit if a month slips.",
+    body: "Tier-mapped uptime targets with credits if a window slips.",
     bullets: ["Publisher 99.5%", "Newsroom 99.7%", "Enterprise 99.9%"],
   },
 ];
 
-export function FeatureMatrix() {
+export function LandingGuarantees() {
   const ref = useRef<HTMLElement>(null);
   useEffect(() => {
     if (ref.current) observeRevealAll(".matrix__cell", ref.current);
@@ -83,26 +83,26 @@ export function FeatureMatrix() {
       <div className="matrix__inner">
         <header className="matrix__head">
           <div className="matrix__eyebrow">Platform guarantees</div>
-          <h2 className="matrix__title">Everything a paying newsroom asks for on day one.</h2>
+          <h2 className="matrix__title">Everything a paying newsroom expects on day one.</h2>
         </header>
 
         <div className="matrix__grid">
           {CELLS.map((c) => {
             const Icon = c.Icon;
             return (
-            <article key={c.title} className="matrix__cell">
-              <div className="matrix__icon" aria-hidden="true">
-                <Icon />
-              </div>
-              <h3 className="matrix__cell-title">{c.title}</h3>
-              <p className="matrix__cell-body">{c.body}</p>
-              <ul className="matrix__bullets">
-                {c.bullets.map((b) => (
-                  <li key={b}>{b}</li>
-                ))}
-              </ul>
-            </article>
-          );
+              <article key={c.title} className="matrix__cell">
+                <div className="matrix__icon" aria-hidden="true">
+                  <Icon />
+                </div>
+                <h3 className="matrix__cell-title">{c.title}</h3>
+                <p className="matrix__cell-body">{c.body}</p>
+                <ul className="matrix__bullets">
+                  {c.bullets.map((b) => (
+                    <li key={b}>{b}</li>
+                  ))}
+                </ul>
+              </article>
+            );
           })}
         </div>
       </div>

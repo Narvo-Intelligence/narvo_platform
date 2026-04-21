@@ -1,29 +1,29 @@
-import { BrandReveal } from "@/components/landing/BrandReveal";
-import { ElevateSection } from "@/components/landing/ElevateSection";
-import { EnginesCatalog } from "@/components/landing/EnginesCatalog";
-import { FeatureMatrix } from "@/components/landing/FeatureMatrix";
-import { FeatureTriplet } from "@/components/landing/FeatureTriplet";
+import { LandingBento } from "@/components/landing/LandingBento";
+import { LandingClosingCta } from "@/components/landing/LandingClosingCta";
+import { LandingGuarantees } from "@/components/landing/LandingGuarantees";
 import { LandingHero } from "@/components/landing/LandingHero";
-import { ScoreRings } from "@/components/landing/ScoreRings";
-import { StartBanner } from "@/components/landing/StartBanner";
-import { Testimonial } from "@/components/landing/Testimonial";
-import { TrustedBar } from "@/components/landing/TrustedBar";
-import { UseCaseSplit } from "@/components/landing/UseCaseSplit";
+import { LandingPlatformBand } from "@/components/landing/LandingPlatformBand";
+import { LandingProductPreview } from "@/components/landing/LandingProductPreview";
+import { LandingQuickstart } from "@/components/landing/LandingQuickstart";
+import { LandingStackStrip } from "@/components/landing/LandingStackStrip";
+import { LandingStatsBar } from "@/components/landing/LandingStatsBar";
+import { LandingStories } from "@/components/landing/LandingStories";
+import { LandingTrustedSection } from "@/components/landing/LandingTrustedSection";
 
 export default function HomePage() {
   return (
     <>
       <LandingHero />
-      <TrustedBar />
-      <FeatureTriplet />
-      <ElevateSection />
-      <EnginesCatalog />
-      <UseCaseSplit />
-      <ScoreRings />
-      <FeatureMatrix />
-      <Testimonial />
-      <StartBanner />
-      <BrandReveal />
+      <LandingStackStrip />
+      <LandingBento />
+      <LandingPlatformBand />
+      <LandingStatsBar />
+      <LandingTrustedSection />
+      <LandingStories />
+      <LandingQuickstart />
+      <LandingProductPreview />
+      <LandingGuarantees />
+      <LandingClosingCta />
     </>
   );
 }
