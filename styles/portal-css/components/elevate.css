@@ -1,0 +1,97 @@
+.elevate {
+  padding: clamp(96px, 14vh, 140px) 0 clamp(48px, 6vh, 72px);
+  text-align: center;
+}
+.elevate__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.elevate__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  background: var(--signal-tint);
+  border: 1px solid rgba(242, 92, 5, 0.3);
+  color: var(--signal);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.elevate__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--signal);
+  box-shadow: 0 0 0 0 rgba(242, 92, 5, 0.6);
+  animation: pulse-orange 2s var(--ease) infinite;
+}
+@keyframes pulse-orange {
+  0% { box-shadow: 0 0 0 0 rgba(242, 92, 5, 0.55); }
+  70% { box-shadow: 0 0 0 8px rgba(242, 92, 5, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(242, 92, 5, 0); }
+}
+
+.elevate__title {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  margin: 0 0 20px;
+}
+
+.elevate__lede {
+  font-size: clamp(15px, 1.1vw, 18px);
+  color: rgba(242, 242, 242, 0.7);
+  max-width: 600px;
+  margin: 0 auto 48px;
+  line-height: 1.6;
+}
+.elevate__lede code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: var(--emerald);
+  padding: 1px 6px;
+  background: var(--emerald-tint);
+  border-radius: 4px;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.elevate__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 28px 0;
+  border-top: 1px solid var(--slate);
+  border-bottom: 1px solid var(--slate);
+}
+.elevate__stat { min-width: 0; }
+.elevate__stat dt {
+  margin: 0 0 6px;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--chalk);
+  font-variant-numeric: tabular-nums;
+}
+.elevate__stat dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ash);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 780px) {
+  .elevate__stats { grid-template-columns: 1fr; gap: 20px; }
+  .elevate__stat dt { font-size: clamp(28px, 8vw, 38px); }
+}

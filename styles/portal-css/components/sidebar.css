@@ -1,0 +1,169 @@
+/* Left sidebar — New_Narvo_B2B.md §5.2 (desktop-first portal IA). */
+
+.platform-shell {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.platform-sidebar {
+  width: 256px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--slate);
+  background: rgba(10, 10, 10, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 40;
+}
+
+.platform-sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 18px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.platform-sidebar__logo {
+  width: 26px;
+  height: 26px;
+  color: var(--signal);
+  flex-shrink: 0;
+}
+
+.platform-sidebar__logo svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.platform-sidebar__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.15;
+}
+
+.platform-sidebar__title {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+}
+
+.platform-sidebar__title-sub {
+  font-weight: 500;
+  font-size: 11px;
+  color: var(--ash);
+}
+
+.platform-sidebar__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--signal);
+  flex-shrink: 0;
+}
+
+.platform-sidebar__nav {
+  padding: 12px 10px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.platform-sidebar__group-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ash-dim);
+  padding: 0 8px 6px;
+}
+
+.platform-sidebar__links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.platform-sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px;
+  border-radius: var(--r-sm);
+  font-size: 13px;
+  color: var(--chalk);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+
+.platform-sidebar__link:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.platform-sidebar__link[data-active="true"] {
+  background: rgba(242, 92, 5, 0.08);
+  color: var(--chalk);
+}
+
+.platform-sidebar__link svg {
+  width: 18px;
+  height: 18px;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+.platform-sidebar__link--cta {
+  margin-top: 4px;
+  justify-content: center;
+  background: var(--signal);
+  color: #0a0a0a;
+  font-weight: 600;
+}
+
+.platform-sidebar__link--cta:hover {
+  background: var(--signal-hover);
+  color: #0a0a0a;
+}
+
+.platform-sidebar__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ash);
+  padding: 10px 10px 0;
+}
+
+.platform-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.platform-main__scroll {
+  flex: 1;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .platform-shell {
+    flex-direction: column;
+  }
+
+  .platform-sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-right: 0;
+    border-bottom: 1px solid var(--slate);
+  }
+}

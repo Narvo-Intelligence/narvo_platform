@@ -1,0 +1,159 @@
+/* /dashboard — auth-gated preview. Shows a faux dashboard so
+   evaluators can see what's behind the login. */
+
+.dashboard {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: clamp(56px, 10vh, 80px) var(--gutter) 96px;
+}
+.dashboard__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+.dashboard__head h1 {
+  font-size: clamp(32px, 3.4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.dashboard__sub {
+  margin: 8px 0 0;
+  color: rgba(242, 242, 242, 0.65);
+  font-size: 14px;
+}
+.dashboard__sub code {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ash);
+  padding: 1px 6px;
+  background: var(--obsidian-lift);
+  border: 1px solid var(--slate);
+  border-radius: 4px;
+}
+.dashboard__sub .mono--accent { color: var(--emerald); }
+.dashboard__gate-link {
+  color: var(--signal);
+  border-bottom: 1px solid var(--signal);
+}
+.dashboard__gate {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid rgba(242,92,5,0.3);
+  background: rgba(242,92,5,0.06);
+  border-radius: var(--r-md);
+  font-size: 13px;
+}
+
+.dashboard__overview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.dashboard__tile {
+  padding: 20px;
+  border: 1px solid var(--slate);
+  border-radius: var(--r-lg);
+  background: var(--graphite);
+}
+.dashboard__tile-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ash);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.dashboard__tile-value {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.dashboard__tile-sub {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--ash);
+  font-family: var(--font-mono);
+}
+
+.dashboard__gauge {
+  padding: 24px;
+  border: 1px solid var(--slate);
+  border-radius: var(--r-lg);
+  background: var(--graphite);
+  margin-bottom: 32px;
+}
+.dashboard__gauge-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  gap: 16px;
+}
+.dashboard__gauge-head strong {
+  font-size: 17px;
+  font-weight: 600;
+}
+.dashboard__gauge-head span {
+  color: var(--ash);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.dashboard__gauge-bar {
+  height: 10px;
+  border-radius: 6px;
+  background: var(--obsidian-lift);
+  border: 1px solid var(--slate);
+  overflow: hidden;
+}
+.dashboard__gauge-bar > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--emerald), #34d399);
+}
+
+.dashboard__keys {
+  padding: 24px;
+  border: 1px solid var(--slate);
+  border-radius: var(--r-lg);
+  background: var(--graphite);
+}
+.dashboard__keys h2 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+}
+.dashboard__key-row {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: 12px;
+  padding: 10px 0;
+  align-items: center;
+  border-top: 1px solid var(--slate);
+  font-size: 13px;
+}
+.dashboard__key-row:first-of-type { border-top: 0; }
+.dashboard__key-name { font-weight: 500; }
+.dashboard__key-val {
+  font-family: var(--font-mono);
+  color: var(--emerald);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dashboard__key-row .btn { height: 32px; padding: 0 12px; font-size: 12px; }
+
+@media (max-width: 1100px) {
+  .dashboard__overview { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 780px) {
+  .dashboard__overview { grid-template-columns: 1fr; }
+  .dashboard__key-row { grid-template-columns: 1fr; }
+}

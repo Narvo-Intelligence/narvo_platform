@@ -1,0 +1,55 @@
+/* =========================================================
+   Stealth Infrastructure tokens.
+   Source of truth: documentations/current/product/New_Narvo_B2B.md §3
+   and documentations/current/design/Narvo_Design_Tokens.md §11.4.
+   ========================================================= */
+
+:root {
+  /* Canvas */
+  --void: #0A0A0A;
+  --graphite: #111111;
+  --obsidian-lift: #1A1A1A;
+  --slate: #2A2A2A;
+  --slate-2: #1f1f1f;
+
+  /* Text */
+  --chalk: #F2F2F2;
+  --ash: #888888;
+  --ash-dim: #5a5a5a;
+
+  /* Brand thread + state */
+  --signal: #F25C05;
+  --signal-hover: #D94F00;
+  --signal-tint: rgba(242, 92, 5, 0.10);
+  --signal-glow: rgba(242, 92, 5, 0.35);
+
+  --emerald: #10B981;
+  --emerald-tint: rgba(16, 185, 129, 0.12);
+  --amber: #F59E0B;
+  --fault: #EF4444;
+
+  --syntax-cyan: #67E8F9;
+  --syntax-purple: #A78BFA;
+  --syntax-string: #d0d0d0;
+
+  /* Typography — wired from next/font on <html> (see root layout CSS variables). */
+  --font-body: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Radius */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 18px;
+  --r-pill: 999px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur: 150ms;
+  --dur-slow: 280ms;
+
+  /* Layout */
+  --gutter: clamp(20px, 4vw, 56px);
+  --content-max: 1280px;
+  --nav-h: 68px;
+}

@@ -1,0 +1,110 @@
+.score-rings {
+  padding: clamp(72px, 10vh, 112px) 0;
+  position: relative;
+}
+.score-rings::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(16, 185, 129, 0.04), transparent 70%);
+  pointer-events: none;
+}
+.score-rings__inner {
+  position: relative;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.score-rings__head {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 56px;
+}
+.score-rings__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--emerald);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.score-rings__title {
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0 0 14px;
+}
+.score-rings__lede {
+  color: rgba(242, 242, 242, 0.65);
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.score-rings__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+  align-items: start;
+  justify-items: center;
+}
+
+.score-ring {
+  position: relative;
+  width: 200px;
+  max-width: 100%;
+  margin: 0;
+  text-align: center;
+}
+.score-ring__svg {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 0 auto 20px;
+}
+.score-ring__track {
+  stroke: var(--slate);
+}
+.score-ring__bar {
+  stroke: var(--emerald);
+  filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.3));
+}
+
+.score-ring__cap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+.score-ring__value {
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--chalk);
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.score-ring__label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.score-ring__detail {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ash);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 1100px) {
+  .score-rings__grid { grid-template-columns: 1fr; gap: 48px; }
+}

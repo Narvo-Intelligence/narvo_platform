@@ -1,0 +1,47 @@
+/* =========================================================
+   Narvo Platform — CSS entry.
+   Every page HTML links only /resources/css/app.css; the rest is @import'd here.
+   Layered by Inertia convention: tokens → base → layouts → components → pages.
+   ========================================================= */
+
+@import url("./tokens.css");
+@import url("./base.css");
+
+@import url("./layouts/portal.css");
+@import url("./layouts/auth.css");
+
+@import url("./components/bg.css");
+@import url("./components/sidebar.css");
+@import url("./components/footer.css");
+@import url("./components/button.css");
+@import url("./components/pill.css");
+@import url("./components/stats.css");
+@import url("./components/section.css");
+@import url("./components/terminal.css");
+@import url("./components/api-card.css");
+@import url("./components/arch.css");
+@import url("./components/language-tile.css");
+@import url("./components/pricing.css");
+@import url("./components/trusted.css");
+@import url("./components/cta.css");
+
+/* Landing v2 (Inertia-concept) components */
+@import url("./components/landing-hero.css");
+@import url("./components/trusted-bar.css");
+@import url("./components/elevate.css");
+@import url("./components/feature-triplet.css");
+@import url("./components/use-case-split.css");
+@import url("./components/score-rings.css");
+@import url("./components/feature-matrix.css");
+@import url("./components/testimonial.css");
+@import url("./components/start-banner.css");
+@import url("./components/brand-reveal.css");
+@import url("./components/engines-catalog.css");
+
+@import url("./pages/landing.css");
+@import url("./pages/pricing.css");
+@import url("./pages/playground.css");
+@import url("./pages/dashboard.css");
+@import url("./pages/docs.css");
+@import url("./pages/status.css");
+@import url("./pages/auth.css");

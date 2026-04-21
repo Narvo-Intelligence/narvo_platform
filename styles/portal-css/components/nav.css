@@ -1,0 +1,119 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(10, 10, 10, 0.72);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav__inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  height: var(--nav-h);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: -0.01em;
+}
+.nav__logo {
+  width: 26px;
+  height: 26px;
+  color: var(--signal);
+  display: inline-flex;
+}
+.nav__logo svg { width: 100%; height: 100%; fill: currentColor; }
+
+.nav__wordmark {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+.nav__wordmark-sub {
+  color: var(--ash);
+  font-weight: 500;
+  margin-left: 2px;
+}
+
+.nav__links {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--ash);
+}
+.nav__links a {
+  transition: color var(--dur) var(--ease);
+}
+.nav__links a:hover,
+.nav__links a[aria-current="page"] {
+  color: var(--chalk);
+}
+.nav__links a[aria-current="page"] {
+  position: relative;
+}
+.nav__links a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -22px;
+  height: 1px;
+  background: var(--signal);
+}
+
+.nav__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ash);
+}
+
+.nav__ctas {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.nav__burger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+.nav__burger span {
+  width: 18px;
+  height: 1.5px;
+  background: var(--chalk);
+  transition: transform var(--dur) var(--ease);
+}
+
+@media (max-width: 780px) {
+  .nav__links { display: none; }
+  .nav__ctas .btn--ghost { display: none; }
+  .nav__burger { display: inline-flex; }
+
+  .nav__links.is-open {
+    display: flex;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    flex-direction: column;
+    padding: 20px var(--gutter);
+    background: var(--void);
+    border-bottom: 1px solid var(--slate);
+    gap: 16px;
+  }
+}

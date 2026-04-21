@@ -1,0 +1,3 @@
+/* PortalLayout — nothing required at layout scope right now;
+   Nav + Footer own their own styles. This file stays to match the Inertia
+   layouts/<name>.css convention and give migration a clean target. */

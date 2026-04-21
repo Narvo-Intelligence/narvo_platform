@@ -1,0 +1,85 @@
+.lang-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.lang {
+  text-align: left;
+  padding: 18px;
+  border: 1px solid var(--slate);
+  border-radius: var(--r-lg);
+  background: var(--graphite);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.lang:hover {
+  transform: translateY(-2px);
+  border-color: rgba(242,92,5,0.4);
+}
+.lang.is-playing {
+  border-color: rgba(242,92,5,0.5);
+  background: linear-gradient(180deg, var(--graphite), rgba(242,92,5,0.06));
+}
+
+.lang__code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--signal);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.lang__name {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.lang__voice {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ash);
+}
+
+.lang__preview {
+  margin-top: 12px;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 28px;
+}
+.lang__preview span {
+  flex: 1;
+  background: var(--ash-dim);
+  border-radius: 1px;
+  height: 30%;
+  transition: background var(--dur) var(--ease), height var(--dur) var(--ease);
+}
+.lang:hover .lang__preview span,
+.lang.is-playing .lang__preview span {
+  background: var(--signal);
+}
+.lang.is-playing .lang__preview span {
+  animation: wave 0.9s var(--ease) infinite;
+}
+.lang.is-playing .lang__preview span:nth-child(2n) { animation-delay: 0.1s; }
+.lang.is-playing .lang__preview span:nth-child(3n) { animation-delay: 0.2s; }
+.lang.is-playing .lang__preview span:nth-child(4n) { animation-delay: 0.3s; }
+.lang.is-playing .lang__preview span:nth-child(5n) { animation-delay: 0.15s; }
+
+.lang--more {
+  border-style: dashed;
+  opacity: 0.7;
+  cursor: default;
+}
+.lang--more:hover { transform: none; }
+
+@media (max-width: 1100px) {
+  .lang-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 780px) {
+  .lang-grid { grid-template-columns: repeat(2, 1fr); }
+}

@@ -1,0 +1,55 @@
+/* /pricing — reuses PricingGrid. Page-only header + FAQ. */
+
+.pricing-header {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: clamp(80px, 14vh, 140px) var(--gutter) 0;
+  text-align: center;
+}
+.pricing-header__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--signal);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.pricing-header__title {
+  font-size: clamp(44px, 5.5vw, 72px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  margin: 0 0 20px;
+}
+.pricing-header__lede {
+  color: rgba(242,242,242,0.7);
+  font-size: 18px;
+  max-width: 640px;
+  margin: 0 auto 48px;
+  line-height: 1.55;
+}
+
+.pricing-faq {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 64px var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 48px;
+}
+.pricing-faq h3 {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+}
+.pricing-faq p {
+  color: rgba(242,242,242,0.65);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 780px) {
+  .pricing-faq { grid-template-columns: 1fr; }
+}

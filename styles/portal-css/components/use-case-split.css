@@ -1,0 +1,108 @@
+.usecase {
+  padding: clamp(72px, 10vh, 112px) 0;
+}
+.usecase__inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.usecase__col {
+  padding: 32px;
+  border: 1px solid var(--slate);
+  border-radius: var(--r-xl);
+  background: var(--graphite);
+  position: relative;
+  overflow: hidden;
+}
+.usecase__col--enterprise {
+  border-color: rgba(242, 92, 5, 0.35);
+  background: linear-gradient(180deg, rgba(242, 92, 5, 0.04), var(--graphite) 55%);
+  box-shadow: 0 0 0 1px rgba(242, 92, 5, 0.1), 0 24px 60px rgba(242, 92, 5, 0.06);
+}
+
+.usecase__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--emerald);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.usecase__eyebrow--em {
+  color: var(--signal);
+}
+
+.usecase__title {
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 24px;
+}
+.usecase__title-accent {
+  color: var(--chalk);
+  opacity: 0.55;
+  font-weight: 400;
+}
+
+.usecase__wins {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: rgba(242, 242, 242, 0.75);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.usecase__wins li {
+  position: relative;
+  padding-left: 26px;
+}
+.usecase__wins li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 14px;
+  height: 7px;
+  border-left: 1.5px solid var(--emerald);
+  border-bottom: 1.5px solid var(--emerald);
+  transform: rotate(-45deg);
+}
+.usecase__col--enterprise .usecase__wins li::before {
+  border-color: var(--signal);
+}
+.usecase__wins strong {
+  color: var(--chalk);
+  font-weight: 600;
+}
+
+.usecase__code {
+  margin: 0;
+  padding: 16px 18px;
+  border: 1px solid var(--slate);
+  border-radius: var(--r-md);
+  background: var(--void);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--chalk);
+  overflow-x: auto;
+  white-space: pre;
+}
+.usecase__code .k   { color: var(--syntax-cyan); }
+.usecase__code .s   { color: var(--syntax-string); }
+.usecase__code .n   { color: var(--syntax-purple); }
+.usecase__code .c   { color: var(--ash-dim); }
+.usecase__code .acc { color: var(--signal); }
+.usecase__code .ok  { color: var(--emerald); }
+
+@media (max-width: 1100px) {
+  .usecase__inner { grid-template-columns: 1fr; }
+}

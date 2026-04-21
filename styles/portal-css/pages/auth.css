@@ -1,0 +1,107 @@
+/* /login, /signup — minimal centered forms. */
+
+.auth {
+  min-height: calc(100vh - var(--nav-h));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px var(--gutter);
+}
+.auth__card {
+  width: 100%;
+  max-width: 400px;
+  padding: 36px;
+  border: 1px solid var(--slate);
+  border-radius: var(--r-lg);
+  background: var(--graphite);
+}
+.auth__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--signal);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.auth__title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0 0 10px;
+}
+.auth__lede {
+  color: rgba(242,242,242,0.65);
+  font-size: 14px;
+  margin: 0 0 28px;
+  line-height: 1.55;
+}
+
+.auth__form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.auth__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.auth__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ash);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.auth__input {
+  background: var(--obsidian-lift);
+  border: 1px solid var(--slate);
+  color: var(--chalk);
+  border-radius: var(--r-md);
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  transition: border-color var(--dur) var(--ease);
+}
+.auth__input:focus {
+  outline: none;
+  border-color: var(--signal);
+}
+
+.auth__oauth {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.auth__oauth .btn { flex: 1; justify-content: center; }
+
+.auth__sep {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 8px;
+  color: var(--ash);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.auth__sep::before,
+.auth__sep::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--slate);
+}
+
+.auth__foot {
+  margin-top: 20px;
+  text-align: center;
+  color: var(--ash);
+  font-size: 13px;
+}
+.auth__foot a {
+  color: var(--chalk);
+  border-bottom: 1px solid var(--signal);
+}
+.auth__foot a:hover { color: var(--signal); }
