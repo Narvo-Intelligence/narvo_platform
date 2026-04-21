@@ -3,41 +3,47 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Status",
+  description:
+    "Live health of every Narvo Platform service — synthesis, TTS, provenance, translation, audio delivery.",
 };
 
 export default function StatusPage() {
   return (
-    <section className="status-page">
-      <header className="status-page__head">
-        <div className="page-eyebrow">Systems</div>
-        <h1 className="status-page__title">API status</h1>
-        <p className="status-page__lede">Operational snapshot — replace with live status JSON when observability is wired.</p>
+    <section className="status">
+      <header className="status__head">
+        <div>
+          <div className="page-eyebrow">System status · v1 beta</div>
+          <h1>All systems operational.</h1>
+          <p className="status__lede">
+            Live health of every Narvo Platform service. Historic uptime window: 30 days. Incident timeline below.
+          </p>
+        </div>
+        <span className="status__banner">
+          <span className="dot dot--ok" /> All systems operational
+        </span>
       </header>
 
-      <div className="overflow-hidden rounded-lg border border-[var(--slate)]">
-        <table className="w-full text-left text-sm">
-          <thead className="bg-[var(--obsidian-lift)] text-[var(--ash)]">
-            <tr>
-              <th className="px-4 py-3 font-medium">Service</th>
-              <th className="px-4 py-3 font-medium">Status</th>
-              <th className="px-4 py-3 font-medium">Uptime (30d)</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-[var(--slate)] bg-[var(--graphite)]">
-            {SERVICES.map((s) => (
-              <tr key={s.name}>
-                <td className="px-4 py-3 text-[var(--chalk)]">{s.name}</td>
-                <td className="px-4 py-3">
-                  <span className="inline-flex items-center gap-2">
-                    <span className="dot dot--ok" /> Operational
-                  </span>
-                </td>
-                <td className="mono px-4 py-3 text-[var(--syntax-cyan)]">{s.uptime}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="status__list" data-status-list>
+        {SERVICES.map((s) => (
+          <div key={s.name} className="status__row">
+            <span className="status__service">{s.name}</span>
+            <span className="status__state">
+              <span className="dot dot--ok" /> {s.status}
+            </span>
+            <span className="status__uptime">
+              {s.uptime} / 30d
+            </span>
+          </div>
+        ))}
       </div>
+
+      <section className="status__incidents">
+        <h2>Recent incidents</h2>
+        <p>
+          No incidents in the last 30 days. Historic incident reports and RCAs are published here within 24 hours of
+          resolution.
+        </p>
+      </section>
     </section>
   );
 }

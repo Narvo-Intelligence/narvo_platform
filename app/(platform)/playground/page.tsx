@@ -1,8 +1,11 @@
+import { HeroTerminal } from "@/components/playground/HeroTerminal";
+import { PlaygroundReveal } from "@/components/playground/PlaygroundReveal";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Playground",
-  description: "Live API request builder — synthesis, TTS, provenance, translation.",
+  description:
+    "Live API request builder. Test synthesis, TTS, provenance, and translation against real fixtures before you write a line of SDK code.",
 };
 
 export default function PlaygroundPage() {
@@ -30,32 +33,39 @@ export default function PlaygroundPage() {
         </div>
       </header>
 
-      <div className="rounded-lg border border-[var(--slate)] bg-[var(--graphite)] p-8 text-[var(--ash)]">
-        <p className="mono text-sm text-[var(--chalk)] mb-2">Interactive HeroTerminal migration</p>
-        <p className="text-sm leading-relaxed">
-          The fully interactive endpoint runner from <code className="mono text-[var(--syntax-cyan)]">narvo-plat</code>{" "}
-          (<span className="mono">HeroTerminal.js</span>) is queued for the next execution slice: tabbed fixtures, typed
-          cURL stream, and JSON response panel will be ported as a client component wired to sandbox API routes.
-        </p>
-      </div>
+      <HeroTerminal variant="standalone" />
 
-      <div className="playground__guide">
+      <PlaygroundReveal>
         <div className="playground__step">
           <div className="playground__step-num">STEP 01</div>
-          <div className="playground__step-title">Authenticate</div>
-          <p className="playground__step-body">Bearer key in the Authorization header — same as production.</p>
+          <h3 className="playground__step-title">Authenticate</h3>
+          <p className="playground__step-desc">
+            Every request carries{" "}
+            <code style={{ fontFamily: "var(--font-mono)", color: "var(--emerald)" }}>
+              Authorization: Bearer nrv_sk_…
+            </code>
+            . Sandbox keys are free and unlimited for evaluation.
+          </p>
         </div>
         <div className="playground__step">
           <div className="playground__step-num">STEP 02</div>
-          <div className="playground__step-title">Pick payload</div>
-          <p className="playground__step-body">Switch synthesis · TTS · provenance · translate from the tab strip.</p>
+          <h3 className="playground__step-title">Send</h3>
+          <p className="playground__step-desc">
+            Hit <kbd>/</kbd> to fire the current request. The latency ticker reports real edge-region response times once
+            you&apos;re on a production key.
+          </p>
         </div>
         <div className="playground__step">
           <div className="playground__step-num">STEP 03</div>
-          <div className="playground__step-title">Inspect response</div>
-          <p className="playground__step-body">Latency, request_id, and provenance block surface inline.</p>
+          <h3 className="playground__step-title">Inspect</h3>
+          <p className="playground__step-desc">
+            Response includes{" "}
+            <code style={{ fontFamily: "var(--font-mono)", color: "var(--emerald)" }}>request_id</code> for support, and a{" "}
+            <code style={{ fontFamily: "var(--font-mono)", color: "var(--emerald)" }}>provenance</code> block wherever it
+            applies.
+          </p>
         </div>
-      </div>
+      </PlaygroundReveal>
     </section>
   );
 }
