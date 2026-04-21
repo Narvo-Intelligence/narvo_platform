@@ -1,3 +1,7 @@
+# Single-package app — `packages` must be non-empty or pnpm fails (e.g. CI store path).
+packages:
+  - "."
+
 ignoredBuiltDependencies:
   - sharp
   - unrs-resolver
