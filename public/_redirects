@@ -1,0 +1,4 @@
+# Cloudflare Pages — send portal /docs traffic to Mintlify (Phase A).
+# Override destination in this file if your Mintlify hostname differs from NEXT_PUBLIC_DOCS_URL default.
+/docs https://docs.platform.narvo.news/ 302
+/docs/ https://docs.platform.narvo.news/ 302

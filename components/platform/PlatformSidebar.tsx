@@ -14,6 +14,7 @@ import {
   ScrollText,
   Zap,
 } from "lucide-react";
+import { getDocsFragmentUrl, getDocsHomeUrl } from "@/lib/docs";
 
 function NavLink({
   href,
@@ -41,6 +42,8 @@ export function PlatformSidebar() {
     return cur === p || cur.startsWith(`${p}/`);
   };
 
+  const docsHome = getDocsHomeUrl();
+
   return (
     <aside className="platform-sidebar">
       <div className="platform-sidebar__brand">
@@ -65,36 +68,36 @@ export function PlatformSidebar() {
               <Rocket aria-hidden />
               Overview
             </NavLink>
-            <NavLink href="/docs/" active={is("/docs")}>
+            <a className="platform-sidebar__link" data-active={is("/docs")} href={docsHome}>
               <BookOpen aria-hidden />
               Quick start
-            </NavLink>
+            </a>
           </div>
         </div>
 
         <div>
           <div className="platform-sidebar__group-label">API reference</div>
           <div className="platform-sidebar__links">
-            <NavLink href="/docs/#synthesis" active={false}>
+            <a className="platform-sidebar__link" href={getDocsFragmentUrl("synthesis")}>
               <Layers aria-hidden />
               Synthesis
-            </NavLink>
-            <NavLink href="/docs/#translate" active={false}>
+            </a>
+            <a className="platform-sidebar__link" href={getDocsFragmentUrl("translate")}>
               <ScrollText aria-hidden />
               Translation
-            </NavLink>
-            <NavLink href="/docs/#tts" active={false}>
+            </a>
+            <a className="platform-sidebar__link" href={getDocsFragmentUrl("tts")}>
               <Radio aria-hidden />
               Broadcast TTS
-            </NavLink>
-            <NavLink href="/docs/#provenance" active={false}>
+            </a>
+            <a className="platform-sidebar__link" href={getDocsFragmentUrl("provenance")}>
               <Gauge aria-hidden />
               Provenance Tag
-            </NavLink>
-            <NavLink href="/docs/#briefing" active={false}>
+            </a>
+            <a className="platform-sidebar__link" href={getDocsFragmentUrl("briefing")}>
               <Zap aria-hidden />
               Morning Briefing
-            </NavLink>
+            </a>
           </div>
         </div>
 

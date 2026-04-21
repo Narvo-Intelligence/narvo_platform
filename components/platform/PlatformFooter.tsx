@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { getDocsFragmentUrl, getDocsHomeUrl } from "@/lib/docs";
 
 function LogoSvg() {
   return (
@@ -58,10 +59,10 @@ export function PlatformFooter() {
           </div>
           <div>
             <div className="footer__head">Developers</div>
-            <Link href="/docs/">Docs</Link>
-            <Link href="/docs/#quickstart">Quick start</Link>
-            <Link href="/docs/#sdks">SDKs</Link>
-            <Link href="/docs/#changelog">Changelog</Link>
+            <a href={getDocsHomeUrl()}>Docs</a>
+            <a href={getDocsFragmentUrl("quickstart")}>Quick start</a>
+            <a href={getDocsFragmentUrl("sdks")}>SDKs</a>
+            <a href={getDocsFragmentUrl("changelog")}>Changelog</a>
           </div>
           <div>
             <div className="footer__head">Company</div>

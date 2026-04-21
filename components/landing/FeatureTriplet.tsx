@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { getDocsFragmentUrl } from "@/lib/docs";
 import { observeRevealAll } from "@/lib/observers/reveal";
 
 function svgSynthesis() {
@@ -88,7 +88,7 @@ const FEATURES = [
     title: "One URL in, broadcast narrative out.",
     body:
       "Send any African news URL. Get back a cleaned, objectively-worded broadcast script with key takeaways and source attribution — in under three seconds.",
-    href: "/docs/#synthesis",
+    docFragment: "synthesis",
     linkLabel: "POST /v1/synthesis",
   },
   {
@@ -97,7 +97,7 @@ const FEATURES = [
     title: "Verifiable consensus, not vibes.",
     body:
       "Every claim is scored against Africa Check, Dubawa, PolitiFact, and Tier-1 Nigerian outlets via RAG. Four corroboration levels. Zero hallucinations.",
-    href: "/docs/#provenance",
+    docFragment: "provenance",
     linkLabel: "POST /v1/provenance",
   },
   {
@@ -106,7 +106,7 @@ const FEATURES = [
     title: "Five voices that sound like home.",
     body:
       "YarnGPT-native Nigerian English, Yorùbá, Hausa, Igbo, and Pidgin — not flat Western voices pretending to speak African. P95 under 1.2 seconds.",
-    href: "/docs/#tts",
+    docFragment: "tts",
     linkLabel: "POST /v1/tts/generate",
   },
 ];
@@ -126,10 +126,10 @@ export function FeatureTriplet() {
             <div className="feature-card__eyebrow">{f.eyebrow}</div>
             <h3 className="feature-card__title">{f.title}</h3>
             <p className="feature-card__body">{f.body}</p>
-            <Link className="feature-card__link" href={f.href}>
+            <a className="feature-card__link" href={getDocsFragmentUrl(f.docFragment)}>
               <span className="mono">{f.linkLabel}</span>
               <span aria-hidden="true">→</span>
-            </Link>
+            </a>
           </article>
         ))}
       </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getDocsHomeUrl } from "@/lib/docs";
 
 export function ClosingCta() {
   return (
@@ -19,9 +20,9 @@ export function ClosingCta() {
           <Link className="btn btn--primary btn--lg" href="/signup/">
             Get API key <span aria-hidden="true">→</span>
           </Link>
-          <Link className="btn btn--ghost btn--lg" href="/docs/">
+          <a className="btn btn--ghost btn--lg" href={getDocsHomeUrl()}>
             Read the docs
-          </Link>
+          </a>
         </div>
         <pre className="cta__snippet">
           <code>

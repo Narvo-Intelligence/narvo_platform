@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getDocsHomeUrl } from "@/lib/docs";
 import { highlightCurl, syntaxHighlight } from "@/lib/syntax";
 
 const REQUEST = `curl -X POST https://api.narvo.news/v1/synthesis \\
@@ -63,9 +64,9 @@ export function LandingHero() {
           <Link className="btn btn--primary btn--lg" href="/signup/">
             Get API key <span aria-hidden="true">→</span>
           </Link>
-          <Link className="btn btn--ghost btn--lg" href="/docs/">
+          <a className="btn btn--ghost btn--lg" href={getDocsHomeUrl()}>
             Read the docs
-          </Link>
+          </a>
           <span className="lh__meta">free 1,000 calls/month · no card</span>
         </div>
       </div>

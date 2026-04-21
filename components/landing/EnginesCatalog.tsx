@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { getDocsFragmentUrl, getDocsHomeUrl } from "@/lib/docs";
 import { observeRevealAll } from "@/lib/observers/reveal";
 import type { ApiProduct } from "@/lib/fixtures";
 import { APIS } from "@/lib/fixtures";
@@ -56,10 +56,10 @@ function EngineCard({ api, i }: { api: ApiProduct; i: number }) {
         </div>
       </dl>
 
-      <Link className="engine__cta" href={`/docs/#${api.key}`}>
+      <a className="engine__cta" href={getDocsFragmentUrl(api.key)}>
         <span>View reference</span>
         <span aria-hidden="true">→</span>
-      </Link>
+      </a>
     </article>
   );
 }
@@ -96,9 +96,9 @@ export function EnginesCatalog() {
               More engines on the roadmap —
               <span className="engines__foot-link"> Webhook delivery</span>,<span className="engines__foot-link"> Pocket TTS (Kyutai)</span>,
               <span className="engines__foot-link"> Provenance Analytics licensing</span>. See the{" "}
-              <Link href="/docs/" className="engines__foot-link">
+              <a href={getDocsHomeUrl()} className="engines__foot-link">
                 full reference
-              </Link>
+              </a>
               .
             </span>
           </div>

@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Narvo Platform
 
-## Getting Started
+B2B developer portal for **platform.narvo.news** — Next.js (App Router), static export for Cloudflare Pages.
 
-First, run the development server:
+## Requirements
+
+- Node.js 20+
+- [pnpm](https://pnpm.io) 9+
+
+## Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
+cp .env.example .env.local
+# Edit .env.local — see comments in .env.example
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|--------|-------------|
+| `pnpm dev` | Development server |
+| `pnpm build` | Production build → `out/` |
+| `pnpm lint` | ESLint |
+| `pnpm typecheck` | TypeScript (`tsc --noEmit`) |
 
-## Learn More
+## Documentation (Mintlify)
 
-To learn more about Next.js, take a look at the following resources:
+API reference lives on a **Mintlify subdomain** (default `https://docs.platform.narvo.news`). Configure `NEXT_PUBLIC_DOCS_URL` in `.env.local` for staging or alternate hostnames.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- In-app `/docs/` remains a hub during local dev; on Cloudflare Pages, `public/_redirects` sends `/docs` and `/docs/` to the Mintlify URL (keep this file in sync when changing the production docs hostname).
+- Align hash fragments in `lib/docs.ts` usage with your Mintlify page anchors.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+Build output is static (`next.config.ts`: `output: "export"`). Deploy `out/` to Cloudflare Pages; set environment variables in the Pages project to match `.env.example` (`NEXT_PUBLIC_*` for client).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Repository
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Remote: `https://github.com/Narvo-Intelligence/narvo_platform`
+
+Execution checklist: [`documentations/current/product/execution/Narvo_Platform_B2B_Execution.md`](../documentations/current/product/execution/Narvo_Platform_B2B_Execution.md) (monorepo path from workspace root).
